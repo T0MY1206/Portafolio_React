@@ -59,7 +59,19 @@
     },
     "projects": {
       "title": "Projects",
-      "description": "Here are some of my recent projects. More coming soon!"
+      "description": "Here are some of my recent projects. More coming soon!",
+      "pronafe": {
+        "title": "Proyecto Pronafe",
+        "description": "Educational management system with PHP/Laravel, MySQL, and modern web technologies"
+      },
+      "begenerico": {
+        "title": "BE Generico",
+        "description": "Generic backend system with REST APIs and database integration"
+      },
+      "urlshortener": {
+        "title": "URL Shortener (.NET)",
+        "description": "Minimal API for URL shortening with Scalar docs, OpenAPI (ES/EN), and dark/light theme"
+      }
     },
     "contact": {
       "title": "Contact",
@@ -138,7 +150,19 @@
     },
     "projects": {
       "title": "Proyectos",
-      "description": "Aquí están algunos de mis proyectos recientes. ¡Más próximamente!"
+      "description": "Aquí están algunos de mis proyectos recientes. ¡Más próximamente!",
+      "pronafe": {
+        "title": "Proyecto Pronafe",
+        "description": "Sistema de gestión educativa con PHP/Laravel, MySQL y tecnologías web modernas"
+      },
+      "begenerico": {
+        "title": "BE Generico",
+        "description": "Sistema backend genérico con APIs REST e integración de base de datos"
+      },
+      "urlshortener": {
+        "title": "URL Shortener (.NET)",
+        "description": "API mínima para acortar URLs con documentación Scalar, OpenAPI (ES/EN) y tema oscuro/claro"
+      }
     },
     "contact": {
       "title": "Contacto",

@@ -55,6 +55,33 @@ const Projects = () => {
               <span>PostgreSQL</span>
             </div>
           </div>
+          <div className="project-card">
+            <h3>{t('projects.pronafe.title')}</h3>
+            <p>{t('projects.pronafe.description')}</p>
+            <div className="project-tags">
+              <span>PHP</span>
+              <span>Laravel</span>
+              <span>MySQL</span>
+            </div>
+          </div>
+          <div className="project-card">
+            <h3>{t('projects.begenerico.title')}</h3>
+            <p>{t('projects.begenerico.description')}</p>
+            <div className="project-tags">
+              <span>Backend</span>
+              <span>REST API</span>
+              <span>Database</span>
+            </div>
+          </div>
+          <div className="project-card">
+            <h3>{t('projects.urlshortener.title')}</h3>
+            <p>{t('projects.urlshortener.description')}</p>
+            <div className="project-tags">
+              <span>.NET</span>
+              <span>OpenAPI</span>
+              <span>Scalar</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
