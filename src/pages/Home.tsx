@@ -21,14 +21,6 @@ const Home = () => {
               {t('nav.contact')}
             </Link>
           </div>
-          <div className="home-contact-info">
-            <a href={`mailto:${profileData.personal.email}`} className="contact-link">
-              📧 {profileData.personal.email}
-            </a>
-            <a href={`tel:${profileData.personal.phone}`} className="contact-link">
-              📱 {profileData.personal.phone}
-            </a>
-          </div>
         </div>
       </div>
     </section>
