@@ -1,0 +1,161 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About Me",
+      "experience": "Experience",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "home": {
+      "title": "Tomas Tutor Onetto",
+      "subtitle": "Software Developer & Technical Leader",
+      "location": "San Vicente, Buenos Aires, Argentina",
+      "cta": "View My Work"
+    },
+    "about": {
+      "title": "About Me",
+      "summary": "Software Developer with 3+ years of experience in frontend, backend, software architecture and technical leadership. Strong background in building scalable web and business systems.",
+      "education": {
+        "title": "Education",
+        "degree": "Systems Analyst, Application Developer and Software Programmer",
+        "status": "In Progress"
+      },
+      "languages": {
+        "title": "Languages",
+        "spanish": "Spanish (Native)",
+        "english": "English (Basic/Intermediate)",
+        "italian": "Italian (Basic)"
+      }
+    },
+    "experience": {
+      "title": "Experience",
+      "thankit": {
+        "title": "Technical Leader",
+        "company": "ThankIt",
+        "period": "2023 - Present",
+        "description": "Leading technical initiatives and development teams."
+      },
+      "isfdyt": {
+        "title": "Teaching Assistant",
+        "company": "ISFDyT N°93",
+        "period": "2022 - Present",
+        "description": "Assisting in educational programs and student support."
+      },
+      "bono": {
+        "title": "IT Support",
+        "company": "Estudio Contadores Bono",
+        "period": "2020 - 2022",
+        "description": "Providing technical support and IT solutions."
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Databases",
+      "tools": "Tools"
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Here are some of my recent projects. More coming soon!"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Let's connect!",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send Message"
+      }
+    },
+    "footer": {
+      "text": "© 2025 Tomas Tutor Onetto. All rights reserved."
+    }
+  },
+  "es": {
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre Mí",
+      "experience": "Experiencia",
+      "skills": "Habilidades",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    },
+    "home": {
+      "title": "Tomas Tutor Onetto",
+      "subtitle": "Desarrollador de Software & Líder Técnico",
+      "location": "San Vicente, Buenos Aires, Argentina",
+      "cta": "Ver Mi Trabajo"
+    },
+    "about": {
+      "title": "Sobre Mí",
+      "summary": "Desarrollador de Software con más de 3 años de experiencia en frontend, backend, arquitectura de software y liderazgo técnico. Fuerte experiencia en la construcción de sistemas web y empresariales escalables.",
+      "education": {
+        "title": "Educación",
+        "degree": "Analista de Sistemas, Desarrollador de Aplicaciones y Programador de Software",
+        "status": "En Curso"
+      },
+      "languages": {
+        "title": "Idiomas",
+        "spanish": "Español (Nativo)",
+        "english": "Inglés (Básico/Intermedio)",
+        "italian": "Italiano (Básico)"
+      }
+    },
+    "experience": {
+      "title": "Experiencia",
+      "thankit": {
+        "title": "Líder Técnico",
+        "company": "ThankIt",
+        "period": "2023 - Presente",
+        "description": "Liderando iniciativas técnicas y equipos de desarrollo."
+      },
+      "isfdyt": {
+        "title": "Ayudante de Cátedra",
+        "company": "ISFDyT N°93",
+        "period": "2022 - Presente",
+        "description": "Asistiendo en programas educativos y apoyo estudiantil."
+      },
+      "bono": {
+        "title": "Soporte IT",
+        "company": "Estudio Contadores Bono",
+        "period": "2020 - 2022",
+        "description": "Proporcionando soporte técnico y soluciones IT."
+      }
+    },
+    "skills": {
+      "title": "Habilidades",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Bases de Datos",
+      "tools": "Herramientas"
+    },
+    "projects": {
+      "title": "Proyectos",
+      "description": "Aquí están algunos de mis proyectos recientes. ¡Más próximamente!"
+    },
+    "contact": {
+      "title": "Contacto",
+      "subtitle": "¡Conectemos!",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "location": "Ubicación",
+      "form": {
+        "name": "Nombre",
+        "email": "Correo",
+        "message": "Mensaje",
+        "send": "Enviar Mensaje"
+      }
+    },
+    "footer": {
+      "text": "© 2025 Tomas Tutor Onetto. Todos los derechos reservados."
+    }
+  }
+}
+

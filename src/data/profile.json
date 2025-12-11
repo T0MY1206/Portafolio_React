@@ -1,0 +1,46 @@
+{
+  "personal": {
+    "fullName": "Tomas Tutor Onetto",
+    "title": "Software Developer & Technical Leader",
+    "location": "San Vicente, Buenos Aires, Argentina",
+    "email": "tomas2000tutor@gmail.com",
+    "phone": "+54 2224 445207"
+  },
+  "summary": "Software Developer with 3+ years of experience in frontend, backend, software architecture and technical leadership. Strong background in building scalable web and business systems.",
+  "skills": {
+    "frontend": ["HTML", "CSS", "JavaScript"],
+    "backend": ["C#", ".NET", "Node.js", "Python", "Java", "Spring Boot"],
+    "databases": ["SQL Server", "PostgreSQL"],
+    "tools": ["GitHub", "Jira", "Postman", "REST APIs"]
+  },
+  "experience": [
+    {
+      "title": "Technical Leader",
+      "company": "ThankIt",
+      "period": "2023 - Present",
+      "description": "Leading technical initiatives and development teams."
+    },
+    {
+      "title": "Teaching Assistant",
+      "company": "ISFDyT N°93",
+      "period": "2022 - Present",
+      "description": "Assisting in educational programs and student support."
+    },
+    {
+      "title": "IT Support",
+      "company": "Estudio Contadores Bono",
+      "period": "2020 - 2022",
+      "description": "Providing technical support and IT solutions."
+    }
+  ],
+  "education": {
+    "degree": "Systems Analyst, Application Developer and Software Programmer",
+    "status": "In Progress"
+  },
+  "languages": [
+    { "name": "Spanish", "level": "Native" },
+    { "name": "English", "level": "Basic/Intermediate" },
+    { "name": "Italian", "level": "Basic" }
+  ]
+}
+
