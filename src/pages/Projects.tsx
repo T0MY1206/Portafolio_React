@@ -37,6 +37,24 @@ const Projects = () => {
               <span>Mobile</span>
             </div>
           </div>
+          <div className="project-card">
+            <h3>Spring Boot Backend</h3>
+            <p>Microservice with Spring Boot, Tomcat, JPA/Hibernate, Swagger, SQL</p>
+            <div className="project-tags">
+              <span>Spring Boot</span>
+              <span>JPA</span>
+              <span>Swagger</span>
+            </div>
+          </div>
+          <div className="project-card">
+            <h3>Camunda 7 BPM Frontend</h3>
+            <p>BPM/DMN flow with AngularJS forms, PostgreSQL, and custom Camunda UI</p>
+            <div className="project-tags">
+              <span>Camunda 7</span>
+              <span>AngularJS</span>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
