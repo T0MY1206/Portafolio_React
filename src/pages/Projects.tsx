@@ -24,7 +24,7 @@ type Project = {
 }
 
 const Projects = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
@@ -72,7 +72,8 @@ const Projects = () => {
       try {
         setLoading(true)
         setError(null)
-        const data = await projectService.getAllProjects()
+        // Enviar el idioma actual al backend para obtener traducciones
+        const data = await projectService.getAllProjects(language)
         setProjects(data)
       } catch (err) {
         setError('Error al cargar los proyectos. Por favor, intenta de nuevo más tarde.')
@@ -83,7 +84,7 @@ const Projects = () => {
     }
 
     loadProjects()
-  }, [])
+  }, [language]) // Recargar cuando cambie el idioma
 
   // Verificar si un proyecto es Bocato Pasteleria
   const isBocatoProject = (project: Project) => {

@@ -60,6 +60,26 @@
     "projects": {
       "title": "Projects",
       "description": "Here are some of my recent projects. More coming soon!",
+      "portfolioReact": {
+        "title": "Portfolio React",
+        "description": "Modern portfolio built with React, TypeScript, and Vite"
+      },
+      "portfolioAngular": {
+        "title": "Portfolio Angular",
+        "description": "Professional portfolio using Angular standalone components"
+      },
+      "portfolioMobile": {
+        "title": "Portfolio Mobile",
+        "description": "Cross-platform mobile portfolio with React Native and Expo"
+      },
+      "springBootBackend": {
+        "title": "Spring Boot Backend",
+        "description": "Microservice with Spring Boot, Tomcat, JPA/Hibernate, Swagger, SQL"
+      },
+      "camundaBpm": {
+        "title": "Camunda 7 BPM Frontend",
+        "description": "BPM/DMN flow with AngularJS forms, PostgreSQL, and custom Camunda UI"
+      },
       "pronafe": {
         "title": "Proyecto Pronafe",
         "description": "Educational management system with PHP/Laravel, MySQL, and modern web technologies"
@@ -155,6 +175,26 @@
     "projects": {
       "title": "Proyectos",
       "description": "Aquí están algunos de mis proyectos recientes. ¡Más próximamente!",
+      "portfolioReact": {
+        "title": "Portfolio React",
+        "description": "Portfolio moderno construido con React, TypeScript y Vite"
+      },
+      "portfolioAngular": {
+        "title": "Portfolio Angular",
+        "description": "Portfolio profesional usando componentes standalone de Angular"
+      },
+      "portfolioMobile": {
+        "title": "Portfolio Mobile",
+        "description": "Portfolio móvil multiplataforma con React Native y Expo"
+      },
+      "springBootBackend": {
+        "title": "Spring Boot Backend",
+        "description": "Microservicio con Spring Boot, Tomcat, JPA/Hibernate, Swagger, SQL"
+      },
+      "camundaBpm": {
+        "title": "Camunda 7 BPM Frontend",
+        "description": "Flujo BPM/DMN con formularios AngularJS, PostgreSQL y UI personalizada de Camunda"
+      },
       "pronafe": {
         "title": "Proyecto Pronafe",
         "description": "Sistema de gestión educativa con PHP/Laravel, MySQL y tecnologías web modernas"

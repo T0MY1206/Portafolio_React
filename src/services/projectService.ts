@@ -22,10 +22,11 @@ type Project = {
 export const projectService = {
   /**
    * Obtiene todos los proyectos del backend
+   * @param lang - Idioma para las traducciones ('es' o 'en')
    */
-  async getAllProjects(): Promise<Project[]> {
+  async getAllProjects(lang: string = 'es'): Promise<Project[]> {
     try {
-      const response = await fetch(`${API_BASE_URL}/projects`)
+      const response = await fetch(`${API_BASE_URL}/projects?lang=${lang}`)
       
       if (!response.ok) {
         throw new Error(`Error al obtener proyectos: ${response.statusText}`)
@@ -41,10 +42,12 @@ export const projectService = {
 
   /**
    * Obtiene un proyecto por su ID
+   * @param id - ID del proyecto
+   * @param lang - Idioma para las traducciones ('es' o 'en')
    */
-  async getProjectById(id: number): Promise<Project> {
+  async getProjectById(id: number, lang: string = 'es'): Promise<Project> {
     try {
-      const response = await fetch(`${API_BASE_URL}/projects/${id}`)
+      const response = await fetch(`${API_BASE_URL}/projects/${id}?lang=${lang}`)
       
       if (!response.ok) {
         throw new Error(`Error al obtener el proyecto: ${response.statusText}`)
