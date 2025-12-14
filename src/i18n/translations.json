@@ -71,6 +71,10 @@
       "urlshortener": {
         "title": "URL Shortener (.NET)",
         "description": "Minimal API for URL shortening with Scalar docs, OpenAPI (ES/EN), and dark/light theme"
+      },
+      "bocato": {
+        "title": "Bocato Pasteleria",
+        "description": "Modern pastry website with elegant design, menu, gallery and reservation system"
       }
     },
     "contact": {
@@ -162,6 +166,10 @@
       "urlshortener": {
         "title": "URL Shortener (.NET)",
         "description": "API mínima para acortar URLs con documentación Scalar, OpenAPI (ES/EN) y tema oscuro/claro"
+      },
+      "bocato": {
+        "title": "Bocato Pasteleria",
+        "description": "Sitio web moderno de pastelería con diseño elegante, menú, galería y sistema de reservas"
       }
     },
     "contact": {

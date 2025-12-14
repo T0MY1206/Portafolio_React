@@ -34,6 +34,10 @@
   box-shadow: 0 8px 24px var(--shadow);
 }
 
+.project-card-clickable {
+  cursor: pointer;
+}
+
 .project-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
