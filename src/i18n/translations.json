@@ -31,6 +31,12 @@
     },
     "experience": {
       "title": "Experience",
+      "thankitFullstack": {
+        "title": "Full Stack Developer",
+        "company": "ThankIt",
+        "period": "2023 - Present",
+        "description": "Full stack development of web applications and business systems."
+      },
       "thankit": {
         "title": "Technical Leader",
         "company": "ThankIt",
@@ -146,6 +152,12 @@
     },
     "experience": {
       "title": "Experiencia",
+      "thankitFullstack": {
+        "title": "Desarrollador Full Stack",
+        "company": "ThankIt",
+        "period": "2023 - Presente",
+        "description": "Desarrollo full stack de aplicaciones web y sistemas empresariales."
+      },
       "thankit": {
         "title": "Líder Técnico",
         "company": "ThankIt",

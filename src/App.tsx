@@ -6,8 +6,11 @@ import Experience from './pages/Experience'
 import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
+import { useVisitLog } from './hooks/useVisitLog'
 
 function App() {
+  useVisitLog()
+
   return (
     <Layout>
       <Routes>

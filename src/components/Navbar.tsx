@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { useTheme } from '../hooks/useTheme'
@@ -7,54 +8,56 @@ const Navbar = () => {
   const { t, toggleLanguage, language } = useLanguage()
   const { theme, toggleTheme } = useTheme()
   const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const isActive = (path: string) => location.pathname === path
+
+  const closeMenu = () => setMenuOpen(false)
+
+  const navLinks = [
+    { path: '/', key: 'nav.home' },
+    { path: '/about', key: 'nav.about' },
+    { path: '/experience', key: 'nav.experience' },
+    { path: '/skills', key: 'nav.skills' },
+    { path: '/projects', key: 'nav.projects' },
+    { path: '/contact', key: 'nav.contact' },
+  ]
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
           TTO
         </Link>
-        <ul className="navbar-menu">
-          <li>
-            <Link to="/" className={isActive('/') ? 'active' : ''}>
-              {t('nav.home')}
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className={isActive('/about') ? 'active' : ''}>
-              {t('nav.about')}
-            </Link>
-          </li>
-          <li>
-            <Link to="/experience" className={isActive('/experience') ? 'active' : ''}>
-              {t('nav.experience')}
-            </Link>
-          </li>
-          <li>
-            <Link to="/skills" className={isActive('/skills') ? 'active' : ''}>
-              {t('nav.skills')}
-            </Link>
-          </li>
-          <li>
-            <Link to="/projects" className={isActive('/projects') ? 'active' : ''}>
-              {t('nav.projects')}
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className={isActive('/contact') ? 'active' : ''}>
-              {t('nav.contact')}
-            </Link>
-          </li>
-        </ul>
-        <div className="navbar-controls">
-          <button onClick={toggleLanguage} className="lang-toggle" aria-label="Toggle language">
-            {language === 'en' ? 'ES' : 'EN'}
-          </button>
-          <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
-            {theme === 'light' ? '🌙' : '☀️'}
-          </button>
+        <button
+          type="button"
+          className="navbar-burger"
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={menuOpen}
+        >
+          <span className="navbar-burger-bar" />
+          <span className="navbar-burger-bar" />
+          <span className="navbar-burger-bar" />
+        </button>
+        <div className={`navbar-dropdown ${menuOpen ? 'navbar-dropdown-open' : ''}`}>
+          <ul className="navbar-menu">
+            {navLinks.map(({ path, key }) => (
+              <li key={path}>
+                <Link to={path} className={isActive(path) ? 'active' : ''} onClick={closeMenu}>
+                  {t(key)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="navbar-controls navbar-controls-in-menu">
+            <button onClick={toggleLanguage} className="lang-toggle" aria-label="Toggle language">
+              {language === 'en' ? 'ES' : 'EN'}
+            </button>
+            <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
+              {theme === 'light' ? '🌙' : '☀️'}
+            </button>
+          </div>
         </div>
       </div>
     </nav>
