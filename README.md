@@ -84,16 +84,6 @@ portfolio-react/
    npm run preview
    ```
 
-### Registro de visitas (opcional)
-
-Si quieres guardar en un archivo del proyecto quiénes entran a la app (datos del navegador, URL, idioma, etc.):
-
-1. Copia `.env.example` a `.env` y deja `VITE_VISITS_API_URL=http://localhost:3001`.
-2. En otra terminal ejecuta el servidor de visitas: `npm run server`.
-3. Con la app en marcha (`npm run dev`), cada carga de la página enviará una línea al archivo **`visits.log`** en la raíz del proyecto (timestamp, URL, referrer, userAgent, idioma, pantalla, etc.).
-
-El archivo `visits.log` está en `.gitignore` (`*.log`). Para usarlo en producción necesitas desplegar también el backend (`server.js`) en un host con Node y definir `VITE_VISITS_API_URL` con esa URL.
-
 ## 📦 Deployment to GitHub Pages
 
 ### Method 1: Using GitHub Actions (Recommended)

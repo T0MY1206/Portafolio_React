@@ -41,15 +41,17 @@ const Navbar = () => {
           <span className="navbar-burger-bar" />
         </button>
         <div className={`navbar-dropdown ${menuOpen ? 'navbar-dropdown-open' : ''}`}>
-          <ul className="navbar-menu">
-            {navLinks.map(({ path, key }) => (
+          <div className="navbar-menu-wrapper">
+            <ul className="navbar-menu">
+              {navLinks.map(({ path, key }) => (
               <li key={path}>
                 <Link to={path} className={isActive(path) ? 'active' : ''} onClick={closeMenu}>
                   {t(key)}
                 </Link>
               </li>
             ))}
-          </ul>
+            </ul>
+          </div>
           <div className="navbar-controls navbar-controls-in-menu">
             <button onClick={toggleLanguage} className="lang-toggle" aria-label="Toggle language">
               {language === 'en' ? 'ES' : 'EN'}
