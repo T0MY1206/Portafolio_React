@@ -6,16 +6,16 @@ const Experience = () => {
 
   const experiences = [
     {
-      titleKey: 'experience.thankitFullstack.title',
-      companyKey: 'experience.thankitFullstack.company',
-      periodKey: 'experience.thankitFullstack.period',
-      descriptionKey: 'experience.thankitFullstack.description'
-    },
-    {
       titleKey: 'experience.thankit.title',
       companyKey: 'experience.thankit.company',
       periodKey: 'experience.thankit.period',
       descriptionKey: 'experience.thankit.description'
+    },
+    {
+      titleKey: 'experience.thankitFullstack.title',
+      companyKey: 'experience.thankitFullstack.company',
+      periodKey: 'experience.thankitFullstack.period',
+      descriptionKey: 'experience.thankitFullstack.description'
     },
     {
       titleKey: 'experience.isfdyt.title',

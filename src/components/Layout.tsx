@@ -12,7 +12,9 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="layout">
       <Navbar />
       <main className="main-content">
-        {children}
+        <div className="main-content-inner">
+          {children}
+        </div>
       </main>
       <Footer />
     </div>

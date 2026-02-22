@@ -1,31 +1,44 @@
 .experience {
-  padding: 4rem 2rem;
-  min-height: calc(100vh - 80px);
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .experience {
+    padding: 2rem 2rem;
+  }
 }
 
 .experience-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .experience-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
 }
 
 .experience-item {
   background-color: var(--bg-secondary);
-  padding: 2rem;
+  padding: 1.5rem 1.5rem;
   border-radius: 12px;
   border-left: 4px solid var(--accent);
   box-shadow: 0 2px 8px var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .experience-item:hover {
-  transform: translateX(8px);
-  box-shadow: 0 4px 16px var(--shadow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .experience-header {
@@ -34,17 +47,17 @@
   align-items: baseline;
   margin-bottom: 0.5rem;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .experience-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: var(--text-primary);
   margin: 0;
 }
 
 .experience-company {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--accent);
   font-weight: 600;
 }
@@ -53,25 +66,26 @@
   display: inline-block;
   background-color: var(--accent);
   color: white;
-  padding: 0.3rem 0.8rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 20px;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
 .experience-description {
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 768px) {
   .experience {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
   }
 
   .experience-item {
-    padding: 1.5rem;
+    padding: 1.25rem 1.25rem;
   }
 
   .experience-header {
@@ -80,7 +94,15 @@
   }
 
   .experience-header h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .experience-company {
+    font-size: 1rem;
+  }
+
+  .experience-description {
+    font-size: 0.95rem;
   }
 }
 

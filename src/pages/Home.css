@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  min-height: 0;
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
