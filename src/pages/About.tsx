@@ -1,5 +1,4 @@
 import { useLanguage } from '../context/LanguageContext'
-import profileData from '../data/profile.json'
 import './About.css'
 
 const About = () => {
@@ -15,7 +14,7 @@ const About = () => {
           </div>
           <div className="about-section">
             <h2>{t('about.education.title')}</h2>
-            <p><strong>{profileData.education.degree}</strong></p>
+            <p><strong>{t('about.education.degree')}</strong></p>
             <p>{t('about.education.status')}</p>
           </div>
           <div className="about-section">

@@ -11,15 +11,15 @@
     "home": {
       "title": "Tomas Tutor Onetto",
       "subtitle": "Software Developer & Technical Leader",
-      "location": "San Vicente, Buenos Aires, Argentina",
+      "location": "Buenos Aires, Argentina",
       "cta": "View My Work"
     },
     "about": {
       "title": "About Me",
-      "summary": "Software Developer with 3+ years of experience in frontend, backend, software architecture and technical leadership. Strong background in building scalable web and business systems.",
+      "summary": "Software Developer with 4 years of experience in frontend, backend, software architecture and technical leadership. Strong background in building scalable web and business systems.",
       "education": {
         "title": "Education",
-        "degree": "Systems Analyst, Application Developer and Software Programmer",
+        "degree": "Analysis, Development and Programming of Applications",
         "status": "In Progress"
       },
       "languages": {
@@ -132,15 +132,15 @@
     "home": {
       "title": "Tomas Tutor Onetto",
       "subtitle": "Desarrollador de Software & Líder Técnico",
-      "location": "San Vicente, Buenos Aires, Argentina",
+      "location": "Buenos Aires, Argentina",
       "cta": "Ver Mi Trabajo"
     },
     "about": {
       "title": "Sobre Mí",
-      "summary": "Desarrollador de Software con más de 3 años de experiencia en frontend, backend, arquitectura de software y liderazgo técnico. Fuerte experiencia en la construcción de sistemas web y empresariales escalables.",
+      "summary": "Desarrollador de Software con 4 años de experiencia en frontend, backend, arquitectura de software y liderazgo técnico. Fuerte experiencia en la construcción de sistemas web y empresariales escalables.",
       "education": {
         "title": "Educación",
-        "degree": "Analista de Sistemas, Desarrollador de Aplicaciones y Programador de Software",
+        "degree": "Análisis, Desarrollo y Programación de Aplicaciones",
         "status": "En Curso"
       },
       "languages": {

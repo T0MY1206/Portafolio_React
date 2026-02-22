@@ -2,11 +2,11 @@
   "personal": {
     "fullName": "Tomas Tutor Onetto",
     "title": "Software Developer & Technical Leader",
-    "location": "San Vicente, Buenos Aires, Argentina",
+    "location": "Buenos Aires, Argentina",
     "email": "tomas2000tutor@gmail.com",
     "phone": "+54 2224 445207"
   },
-  "summary": "Software Developer with 3+ years of experience in frontend, backend, software architecture and technical leadership. Strong background in building scalable web and business systems.",
+  "summary": "Software Developer with 4 years of experience in frontend, backend, software architecture and technical leadership. Strong background in building scalable web and business systems.",
   "skills": {
     "frontend": ["HTML", "CSS", "JavaScript"],
     "backend": ["C#", ".NET", "Node.js", "Python", "Java", "Spring Boot"],
@@ -34,7 +34,7 @@
     }
   ],
   "education": {
-    "degree": "Systems Analyst, Application Developer and Software Programmer",
+    "degree": "Análisis, Desarrollo y Programación de Aplicaciones",
     "status": "In Progress"
   },
   "languages": [

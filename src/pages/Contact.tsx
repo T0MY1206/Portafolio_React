@@ -29,7 +29,6 @@ const Contact = () => {
     <section className="contact">
       <div className="contact-container">
         <h1 className="page-title">{t('contact.title')}</h1>
-        <p className="contact-subtitle">{t('contact.subtitle')}</p>
         <div className="contact-content">
           <div className="contact-info">
             <div className="contact-item">
