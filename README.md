@@ -42,8 +42,7 @@ portfolio-react/
 │   ├── context/         # Context providers
 │   │   └── LanguageContext.tsx
 │   ├── hooks/          # Custom hooks
-│   │   ├── useTheme.ts
-│   │   └── useLanguage.ts (deprecated, redirects to context)
+│   │   └── useTheme.ts
 │   ├── i18n/           # Translations
 │   │   └── translations.json
 │   ├── data/           # Profile data

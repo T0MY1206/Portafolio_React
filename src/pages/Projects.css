@@ -56,6 +56,30 @@
   gap: 0.5rem;
 }
 
+.project-repo-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.project-repo-link {
+  display: inline-block;
+  margin-top: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.project-repo-links .project-repo-link {
+  margin-top: 0;
+}
+
+.project-repo-link:hover {
+  color: var(--accent-hover);
+}
+
 .project-tags span {
   background-color: var(--accent);
   color: white;

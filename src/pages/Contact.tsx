@@ -13,7 +13,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real app, this would send the form data to a backend
     alert('Thank you for your message! In a production app, this would be sent to a backend.')
     setFormData({ name: '', email: '', message: '' })
   }

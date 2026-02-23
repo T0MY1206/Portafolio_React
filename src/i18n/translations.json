@@ -65,42 +65,53 @@
     },
     "projects": {
       "title": "Projects",
-      "description": "Here are some of my recent projects. More coming soon!",
-      "portfolioReact": {
-        "title": "Portfolio React",
-        "description": "Modern portfolio built with React, TypeScript, and Vite"
+      "description": "Here are some of my recent projects.",
+      "viewRepo": "View repository",
+      "repoFrontend": "Frontend",
+      "repoBackend": "Backend",
+      "contadores": {
+        "title": "Proyecto Contadores",
+        "description": "Bank reconciliation app: match bank statement Excel with accounting Excel by date, amount and concept; outputs Excel with differences (matched, possible, unmatched) in outputs/."
       },
-      "portfolioAngular": {
-        "title": "Portfolio Angular",
-        "description": "Professional portfolio using Angular standalone components"
+      "loginOauth": {
+        "title": "Login con OAuth",
+        "description": "Simple login using OAuth. Node.js + Express."
+      },
+      "awInternetSales": {
+        "title": "AW Internet Sales",
+        "description": "Microsoft Analysis Services tabular model for internet sales metrics, optimized for Business Intelligence and data analysis."
+      },
+      "tarjetaCredito": {
+        "title": "Proyecto Tarjeta de Credito",
+        "description": "Full-stack credit card management with full CRUD: Angular 20 (responsive, validations, notifications) and .NET 8 REST API with Entity Framework, SQL Server, Swagger, CORS."
+      },
+      "backendJava": {
+        "title": "Proyecto backend Java",
+        "description": "REST API for supermarket management (products, branches, sales) with Spring Boot 4 and Java 25, JPA/Hibernate, MySQL, repository and controller tests, Docker support."
+      },
+      "taskFlowApi": {
+        "title": "Task-Flow API",
+        "description": "REST API for task management with Spring Boot 4 and Java 25, PostgreSQL, JWT auth, Swagger, pagination and filters, Testcontainers integration tests, Docker."
       },
       "portfolioMobile": {
-        "title": "Portfolio Mobile",
-        "description": "Cross-platform mobile portfolio with React Native and Expo"
-      },
-      "springBootBackend": {
-        "title": "Spring Boot Backend",
-        "description": "Microservice with Spring Boot, Tomcat, JPA/Hibernate, Swagger, SQL"
-      },
-      "camundaBpm": {
-        "title": "Camunda 7 BPM Frontend",
-        "description": "BPM/DMN flow with AngularJS forms, PostgreSQL, and custom Camunda UI"
+        "title": "Portafolio mobile",
+        "description": "Cross-platform mobile portfolio with React Native and Expo: dark mode, multi-language, carousel navigation, local storage, Context API."
       },
       "pronafe": {
         "title": "Proyecto Pronafe",
-        "description": "Educational management system with PHP/Laravel, MySQL, and modern web technologies"
+        "description": "Educational web system (PRONAFE) with Laravel 12 and React 19 via Inertia.js: institutes, periods, roles (Admin, Supervisor, Instituto), auth, bulk emails, Excel export, API."
       },
-      "begenerico": {
-        "title": "BE Generico",
-        "description": "Generic backend system with REST APIs and database integration"
+      "windowsForm": {
+        "title": "Proyecto Windows Form",
+        "description": "Desktop system for attendance and staff management with .NET Framework and Windows Forms: CRUD for employees and positions, check-in/out, automatic hours calculation."
       },
-      "urlshortener": {
-        "title": "URL Shortener (.NET)",
-        "description": "Minimal API for URL shortening with Scalar docs, OpenAPI (ES/EN), and dark/light theme"
+      "urlShortener": {
+        "title": "URL Shortener",
+        "description": "Minimal .NET API to shorten URLs, custom slugs, 302 redirect, validations, bilingual (ES/EN) OpenAPI and Scalar docs, ready to scale with PostgreSQL, Redis, JWT."
       },
       "bocato": {
         "title": "Bocato Pasteleria",
-        "description": "Modern pastry website with elegant design, menu, gallery and reservation system"
+        "description": "Modern pastry website with Angular 20: i18n (ES/EN), dark mode, animations, responsive design, state with Signals, preferences in localStorage."
       }
     },
     "contact": {
@@ -186,42 +197,53 @@
     },
     "projects": {
       "title": "Proyectos",
-      "description": "Aquí están algunos de mis proyectos recientes. ¡Más próximamente!",
-      "portfolioReact": {
-        "title": "Portfolio React",
-        "description": "Portfolio moderno construido con React, TypeScript y Vite"
+      "description": "Aquí están algunos de mis proyectos recientes.",
+      "viewRepo": "Ver repositorio",
+      "repoFrontend": "Frontend",
+      "repoBackend": "Backend",
+      "contadores": {
+        "title": "Proyecto Contadores",
+        "description": "Conciliador contable: aplicación para conciliar un Excel de extractos bancarios con un Excel contable. Compara por fecha, monto y concepto y genera un Excel con diferencias (conciliados, posibles y no conciliados) en outputs/."
       },
-      "portfolioAngular": {
-        "title": "Portfolio Angular",
-        "description": "Portfolio profesional usando componentes standalone de Angular"
+      "loginOauth": {
+        "title": "Login con OAuth",
+        "description": "Login sencillo usando cuenta OAuth. Node.js + Express."
+      },
+      "awInternetSales": {
+        "title": "AW Internet Sales",
+        "description": "Modelo tabular de Microsoft Analysis Services para métricas de ventas por internet, optimizado para Business Intelligence y análisis de datos."
+      },
+      "tarjetaCredito": {
+        "title": "Proyecto Tarjeta de Credito",
+        "description": "Aplicación full stack para gestión de tarjetas de crédito con CRUD completo: Angular 20 (responsivo, validaciones, notificaciones) y API REST .NET 8 con Entity Framework, SQL Server, Swagger y CORS."
+      },
+      "backendJava": {
+        "title": "Proyecto backend Java",
+        "description": "API REST para gestión de supermercado (productos, sucursales, ventas) con Spring Boot 4 y Java 25, JPA/Hibernate, MySQL, tests de repositorio y controladores, Docker."
+      },
+      "taskFlowApi": {
+        "title": "Task-Flow API",
+        "description": "API REST de gestión de tareas con Spring Boot 4 y Java 25, PostgreSQL, autenticación JWT, Swagger, paginación y filtros, tests con Testcontainers, Docker."
       },
       "portfolioMobile": {
-        "title": "Portfolio Mobile",
-        "description": "Portfolio móvil multiplataforma con React Native y Expo"
-      },
-      "springBootBackend": {
-        "title": "Spring Boot Backend",
-        "description": "Microservicio con Spring Boot, Tomcat, JPA/Hibernate, Swagger, SQL"
-      },
-      "camundaBpm": {
-        "title": "Camunda 7 BPM Frontend",
-        "description": "Flujo BPM/DMN con formularios AngularJS, PostgreSQL y UI personalizada de Camunda"
+        "title": "Portafolio mobile",
+        "description": "Aplicación móvil portfolio multiplataforma con React Native y Expo: modo oscuro, multiidioma, navegación tipo carrusel, almacenamiento local, Context API."
       },
       "pronafe": {
         "title": "Proyecto Pronafe",
-        "description": "Sistema de gestión educativa con PHP/Laravel, MySQL y tecnologías web modernas"
+        "description": "Sistema web educativo (PRONAFE) con Laravel 12 y React 19 mediante Inertia.js: institutos, períodos, roles (Admin, Supervisor, Instituto), auth, envío masivo de emails, exportación Excel, API."
       },
-      "begenerico": {
-        "title": "BE Generico",
-        "description": "Sistema backend genérico con APIs REST e integración de base de datos"
+      "windowsForm": {
+        "title": "Proyecto Windows Form",
+        "description": "Sistema de escritorio para gestión de asistencias y personal con .NET Framework y Windows Forms: CRUD de empleados y cargos, entradas/salidas, cálculo de horas trabajadas."
       },
-      "urlshortener": {
-        "title": "URL Shortener (.NET)",
-        "description": "API mínima para acortar URLs con documentación Scalar, OpenAPI (ES/EN) y tema oscuro/claro"
+      "urlShortener": {
+        "title": "URL Shortener",
+        "description": "API mínima en .NET para acortar URLs, slugs personalizados, redirección 302, validaciones, documentación bilingüe (ES/EN) con OpenAPI y Scalar, preparada para PostgreSQL, Redis y JWT."
       },
       "bocato": {
         "title": "Bocato Pasteleria",
-        "description": "Sitio web moderno de pastelería con diseño elegante, menú, galería y sistema de reservas"
+        "description": "Sitio web moderno para pastelería con Angular 20: internacionalización (ES/EN), modo oscuro, animaciones, diseño responsive, estado con Signals, preferencias en localStorage."
       }
     },
     "contact": {

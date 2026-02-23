@@ -18,7 +18,6 @@
   gap: 1rem;
 }
 
-/* En desktop: logo (izq) | menú centrado | controles (der) */
 .navbar-dropdown {
   display: flex;
   align-items: center;
@@ -99,7 +98,6 @@
   border-color: var(--accent);
 }
 
-/* Botón hamburguesa: oculto en desktop */
 .navbar-burger {
   display: none;
   flex-direction: column;
@@ -146,7 +144,6 @@
     flex: none;
   }
 
-  /* Dropdown como panel fijo debajo de la barra */
   .navbar-dropdown {
     position: fixed;
     top: 57px;
