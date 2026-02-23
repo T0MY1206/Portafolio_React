@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import Mascot from './Mascot'
 import './Layout.css'
 
 interface LayoutProps {
@@ -17,6 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
         </div>
       </main>
       <Footer />
+      <Mascot />
     </div>
   )
 }

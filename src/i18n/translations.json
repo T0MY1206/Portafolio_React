@@ -129,6 +129,16 @@
     },
     "footer": {
       "text": "© 2025 Tomas Tutor Onetto. All rights reserved."
+    },
+    "mascot": {
+      "home": "This is my spot now!|Just passing through...|Nice place you have here!",
+      "about": "I'm stealing the About section!|So much text... I'll take it!|Mine now 😄",
+      "experience": "These cards look tasty!|Yoink! Experience is mine!|I needed more experience anyway.",
+      "skills": "I have skills too!|Borrowing some of these...|Skill section: acquired.",
+      "projects": "So many projects!|This section is mine now!|I call dibs on the repos!",
+      "contact": "Don't contact them, contact me!|Mail section: stolen!|I'll forward the messages... maybe.",
+      "hideComment": "Gone! 😄|Hidden!|Out of sight!|Nobody will find it now!|Poof!",
+      "moveComment": "Moved it!|Relocated!|Somewhere else now!|Fresh spot!|Shifted!"
     }
   },
   "es": {
@@ -261,6 +271,16 @@
     },
     "footer": {
       "text": "© 2025 Tomas Tutor Onetto. Todos los derechos reservados."
+    },
+    "mascot": {
+      "home": "¡Este rincón es mío!|Pasando por aquí...|¡Qué lindo lugar!",
+      "about": "¡Robé la sección Sobre mí!|Tanto texto... me lo quedo.|¡Ahora es mía 😄",
+      "experience": "¡Estas cards se ven bien!|¡Yoink! La experiencia es mía.|Necesitaba más experiencia.",
+      "skills": "¡Yo también tengo skills!|Me presto algunas...|Sección habilidades: adquirida.",
+      "projects": "¡Cuántos proyectos!|¡Esta sección es mía!|¡Me adjudico los repos!",
+      "contact": "¡No los contactes a ellos, a mí!|Sección contacto: robada.|Les reenvío los mensajes... tal vez.",
+      "hideComment": "¡Listo, escondido! 😄|¡Escondido!|¡Fuera de vista!|¡Nadie lo encuentra ahora!|¡Puf!",
+      "moveComment": "¡Lo moví de lugar!|¡Reubicado!|¡Por otro lado ahora!|¡Nuevo lugar!|¡Desplazado!"
     }
   }
 }

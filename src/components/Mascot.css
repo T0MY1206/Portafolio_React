@@ -1,0 +1,154 @@
+.mascot {
+  position: fixed;
+  z-index: 9999;
+  width: 68px;
+  height: 85px;
+  margin-left: -34px;
+  margin-top: -42px;
+  pointer-events: none;
+  transition: left 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    top 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: drop-shadow(0 3px 12px rgba(0,0,0,0.25));
+}
+
+.mascot * {
+  pointer-events: auto;
+}
+
+.mascot-character {
+  width: 100%;
+  height: 100%;
+}
+
+.mascot-character svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mascot-pixel {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Brazos: origen en el hombro para rotar */
+.mascot-arm {
+  transform-box: fill-box;
+  transition: transform 0.25s ease;
+}
+.mascot-arm-left {
+  transform-origin: 6px 18px;
+}
+.mascot-arm-right {
+  transform-origin: 26px 18px;
+}
+
+.mascot-acting .mascot-arm-left {
+  animation: mascot-arm-wave-left 0.4s ease-in-out 2;
+}
+.mascot-acting .mascot-arm-right {
+  animation: mascot-arm-wave-right 0.4s ease-in-out 2;
+}
+
+@keyframes mascot-arm-wave-left {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-28deg); }
+}
+@keyframes mascot-arm-wave-right {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(28deg); }
+}
+
+:root {
+  --mascot-skin: #e8c4a0;
+  --mascot-eyes: #2d6a4f;
+  --mascot-shirt: #1a1a1a;
+  --mascot-pants: #2c3e5f;
+  --mascot-glasses-frame: #1a1a1a;
+}
+
+[data-theme="dark"] {
+  --mascot-skin: #c9a882;
+  --mascot-eyes: #40916c;
+  --mascot-shirt: #f5f5f5;
+  --mascot-pants: #e8dcc8;
+  --mascot-glasses-frame: #1a1a1a;
+}
+
+.mascot-bubble {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 120px;
+  max-width: 200px;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-primary);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  text-align: center;
+  animation: mascot-bubble-in 0.3s ease;
+}
+
+.mascot-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border: 6px solid transparent;
+  border-top-color: var(--accent);
+}
+
+@keyframes mascot-bubble-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-4px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-8px) scale(1);
+  }
+}
+
+.mascot-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: background 0.2s, color 0.2s;
+}
+
+.mascot-close:hover {
+  background: var(--accent);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .mascot {
+    width: 52px;
+    height: 65px;
+    margin-left: -26px;
+    margin-top: -32px;
+  }
+
+  .mascot-bubble {
+    max-width: 160px;
+    font-size: 0.75rem;
+  }
+}
