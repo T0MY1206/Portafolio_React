@@ -98,44 +98,47 @@ const Projects = () => {
     <section className="projects">
       <div className="projects-container">
         <h1 className="page-title">{t('projects.title')}</h1>
-        <p className="projects-description">{t('projects.description')}</p>
 
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
+              <div className="project-card-header">
+                <h3>{project.name}</h3>
+                {(project.repositoryLinks?.length || project.repositoryUrl) && (
+                  <div className="project-repo-links">
+                    {project.repositoryLinks?.length
+                      ? project.repositoryLinks.map((link) => (
+                          <a
+                            key={link.labelKey}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-repo-link"
+                            aria-label={t(link.labelKey)}
+                          >
+                            {t(link.labelKey)}
+                          </a>
+                        ))
+                      : project.repositoryUrl && (
+                          <a
+                            href={project.repositoryUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="project-repo-link"
+                            aria-label={t('projects.viewRepo')}
+                          >
+                            {t('projects.viewRepo')}
+                          </a>
+                        )}
+                  </div>
+                )}
+              </div>
+              <p className="project-card-description">{project.description}</p>
               <div className="project-tags">
                 {project.technologies.map((tech) => (
                   <span key={tech.id}>{tech.name}</span>
                 ))}
               </div>
-              {project.repositoryLinks?.length ? (
-                <div className="project-repo-links">
-                  {project.repositoryLinks.map((link) => (
-                    <a
-                      key={link.labelKey}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-repo-link"
-                      aria-label={t(link.labelKey)}
-                    >
-                      {t(link.labelKey)}
-                    </a>
-                  ))}
-                </div>
-              ) : project.repositoryUrl ? (
-                <a
-                  href={project.repositoryUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-repo-link"
-                  aria-label={t('projects.viewRepo')}
-                >
-                  {t('projects.viewRepo')}
-                </a>
-              ) : null}
             </div>
           ))}
         </div>
