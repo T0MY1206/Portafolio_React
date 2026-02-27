@@ -90,6 +90,8 @@ export default function Mascot() {
   }, [moveToRandom])
 
   useEffect(() => {
+    if (!visible) return
+
     const key = `mascot.${section}`
     const raw = t(key)
     if (raw === key) return
@@ -99,7 +101,7 @@ export default function Mascot() {
     setComment(msg)
     const hide = setTimeout(() => setComment(null), COMMENT_DURATION_MS)
     return () => clearTimeout(hide)
-  }, [section, position.x, position.y])
+  }, [section, position.x, position.y, visible])
 
   useEffect(() => {
     restoreAffected()
@@ -108,6 +110,16 @@ export default function Mascot() {
     if (moveToTargetTimerRef.current) clearTimeout(moveToTargetTimerRef.current)
     if (commentClearRef.current) clearTimeout(commentClearRef.current)
     actionTimerRef.current = restoreTimerRef.current = moveToTargetTimerRef.current = commentClearRef.current = null
+
+    if (!visible) {
+      return () => {
+        if (actionTimerRef.current) clearTimeout(actionTimerRef.current)
+        if (restoreTimerRef.current) clearTimeout(restoreTimerRef.current)
+        if (moveToTargetTimerRef.current) clearTimeout(moveToTargetTimerRef.current)
+        if (commentClearRef.current) clearTimeout(commentClearRef.current)
+        restoreAffected()
+      }
+    }
 
     function runNextAction() {
       const container = document.querySelector('.main-content-inner')
@@ -177,7 +189,18 @@ export default function Mascot() {
       if (commentClearRef.current) clearTimeout(commentClearRef.current)
       restoreAffected()
     }
-  }, [section, positionNearElement, restoreAffected, t])
+  }, [section, positionNearElement, restoreAffected, t, visible])
+
+  const handleClose = () => {
+    setVisible(false)
+    setComment(null)
+    setActing(false)
+    if (actionTimerRef.current) clearTimeout(actionTimerRef.current)
+    if (restoreTimerRef.current) clearTimeout(restoreTimerRef.current)
+    if (moveToTargetTimerRef.current) clearTimeout(moveToTargetTimerRef.current)
+    if (commentClearRef.current) clearTimeout(commentClearRef.current)
+    restoreAffected()
+  }
 
   if (!visible) return null
 
@@ -191,7 +214,7 @@ export default function Mascot() {
       <button
         type="button"
         className="mascot-close"
-        onClick={() => setVisible(false)}
+        onClick={handleClose}
         aria-label="Ocultar mascota"
       >
         ×
