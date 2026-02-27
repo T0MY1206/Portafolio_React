@@ -16,11 +16,20 @@
     },
     "about": {
       "title": "About Me",
-      "summary": "Software Developer with 4 years of experience in frontend, backend, software architecture and technical leadership. Strong background in building scalable web and business systems.",
+      "summary": "Full Stack Developer and Technical Lead with over 4 years of experience turning business requirements into scalable digital solutions. My approach combines strong technical expertise in modern architectures with the ability to coordinate multidisciplinary teams to ensure quality and standards compliance in every delivery. I specialize in designing technical-functional architectures, integrating complex APIs and implementing solutions with conversational AI. I firmly believe that project success relies on effective communication with the client and continuous support throughout the entire software lifecycle.",
       "education": {
         "title": "Education",
-        "degree": "Analysis, Development and Programming of Applications",
-        "status": "In Progress"
+        "item1": "Analyst, Developer and Application Programmer — ISFDyT N°93 — Status: In Progress.",
+        "item2": "Front-End JS — Buenos Aires Ciudad — Status: Completed.",
+        "item3": "Argentina Programa: #SéProgramar — Ministry of Productive Development of Argentina — Status: Completed.",
+        "item4": "Programming in Blazor - ASP.NET Core 7 — Udemy — Status: Completed.",
+        "item5": "Introduction to Algorithms and Programming — TodoCode — Status: Completed.",
+        "item6": "Programming Fundamentals — Fundación Telefónica Movistar — Status: Completed.",
+        "item7": "Web Design with HTML5 — Fundación Telefónica Movistar — Status: Completed.",
+        "item8": "HTML and CSS from Scratch — TodoCode — Status: Completed.",
+        "item9": "Introduction to Git and GitHub — TodoCode — Status: Completed.",
+        "item10": "Cybersecurity in the Educational Environment — Fundación Telefónica Movistar — Status: Completed.",
+        "item11": "Google Hacking Course // Dorks Commands for Hacking — Udemy — Status: Completed."
       },
       "languages": {
         "title": "Languages",
@@ -158,11 +167,20 @@
     },
     "about": {
       "title": "Sobre Mí",
-      "summary": "Desarrollador de Software con 4 años de experiencia en frontend, backend, arquitectura de software y liderazgo técnico. Fuerte experiencia en la construcción de sistemas web y empresariales escalables.",
+      "summary": "Desarrollador Full Stack y Líder Técnico con más de 4 años de experiencia transformando requerimientos de negocio en soluciones digitales escalables. Mi enfoque combina la solidez técnica en arquitecturas modernas con la capacidad de coordinar equipos multidisciplinarios para asegurar la calidad y el cumplimiento de estándares en cada entrega. Me especializo en el diseño de arquitecturas técnico-funcionales, integración de APIs complejas y la implementación de soluciones con IA conversacional. Creo firmemente que el éxito de un proyecto reside en la comunicación efectiva con el cliente y el acompañamiento constante en todo el ciclo de vida del software.",
       "education": {
         "title": "Educación",
-        "degree": "Análisis, Desarrollo y Programación de Aplicaciones",
-        "status": "En Curso"
+        "item1": "Título: Analista, Desarrollador y Programador de Aplicaciones. Institución: ISFDyT N°93. Estado: En Curso.",
+        "item2": "Título: Front-End JS. Institución: Buenos Aires Ciudad. Estado: Finalizado.",
+        "item3": "Título: Argentina Programa: #SéProgramar. Institución: Ministerio de Desarrollo Productivo Argentina. Estado: Finalizado.",
+        "item4": "Título: Programando en Blazor - ASP.NET Core 7. Institución: Udemy. Estado: Finalizado.",
+        "item5": "Título: Introducción a los Algoritmos y la Programación. Institución: TodoCode. Estado: Finalizado.",
+        "item6": "Título: Fundamentos de Programación. Institución: Fundación Telefónica Movistar. Estado: Finalizado.",
+        "item7": "Título: Diseño Web con HTML5. Institución: Fundación Telefónica Movistar. Estado: Finalizado.",
+        "item8": "Título: HTML y CSS desde CERO. Institución: TodoCode. Estado: Finalizado.",
+        "item9": "Título: Introducción a Git y GitHub. Institución: TodoCode. Estado: Finalizado.",
+        "item10": "Título: Ciberseguridad en el Entorno Educativo. Institución: Fundación Telefónica Movistar. Estado: Finalizado.",
+        "item11": "Título: Curso de Google Hacking || Dorks Comandos para Hackear. Institución: Udemy. Estado: Finalizado."
       },
       "languages": {
         "title": "Idiomas",
