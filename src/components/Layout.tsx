@@ -18,7 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
         </div>
       </main>
       <Footer />
-      <Mascot />
+      {import.meta.env.VITE_MASCOT_ENABLED !== 'false' && <Mascot />}
     </div>
   )
 }

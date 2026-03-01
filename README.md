@@ -1,197 +1,199 @@
 # Portfolio React
 
-Modern, responsive portfolio website built with React, TypeScript, and Vite. Features dark mode, multi-language support (English/Spanish), and a professional design.
+Portfolio web moderno y responsive hecho con React, TypeScript y Vite. Incluye modo oscuro/claro, soporte multiidioma (inglés/español), formulario de contacto con EmailJS y diseño profesional.
 
 ## 🚀 Tech Stack
 
-- **React 18** - UI library
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-- **React Router** - Client-side routing
-- **CSS Modules** - Component styling
+- **React 18** – UI
+- **TypeScript** – Tipado
+- **Vite** – Build y dev server
+- **React Router** – Navegación
+- **EmailJS** – Envío de mensajes del formulario de contacto
 
 ## ✨ Features
 
-- 🌓 Dark Mode / Light Mode toggle with localStorage persistence
-- 🌍 Multi-language support (English/Spanish) with Context API
-- 📱 Fully responsive design
-- ⚡ Fast performance with Vite
-- ♿ Accessible and SEO-friendly
-- 🎨 Modern, professional UI
-- 🔄 React Router for client-side navigation
-- 📊 Complete portfolio sections: Home, About, Experience, Skills, Projects, Contact
+- 🌓 Modo oscuro/claro con persistencia en `localStorage`
+- 🌍 Multiidioma (EN/ES) con Context API
+- 📱 Diseño responsive
+- ⚡ Alta performance con Vite
+- ♿ Accesible y amigable para SEO
+- 📧 Formulario de contacto con validación y envío por EmailJS
+- 📊 Secciones: Home, About, Experience, Skills, Projects, Contact
 
-## 📁 Project Structure
+## 📁 Estructura del proyecto
 
 ```
 portfolio-react/
 ├── public/
-│   └── favicon.ico
 ├── src/
-│   ├── components/       # Reusable components
-│   │   ├── Layout.tsx
-│   │   ├── Navbar.tsx
-│   │   └── Footer.tsx
-│   ├── pages/           # Page components
-│   │   ├── Home.tsx
-│   │   ├── About.tsx
-│   │   ├── Experience.tsx
-│   │   ├── Skills.tsx
-│   │   ├── Projects.tsx
-│   │   └── Contact.tsx
-│   ├── context/         # Context providers
-│   │   └── LanguageContext.tsx
-│   ├── hooks/          # Custom hooks
-│   │   └── useTheme.ts
-│   ├── i18n/           # Translations
-│   │   └── translations.json
-│   ├── data/           # Profile data
-│   │   └── profile.json
+│   ├── components/    # Layout, Navbar, Footer, Mascot
+│   ├── pages/        # Home, About, Experience, Skills, Projects, Contact
+│   ├── context/      # LanguageContext
+│   ├── hooks/        # useTheme
+│   ├── i18n/         # translations.json
+│   ├── data/         # profile.json
 │   ├── App.tsx
 │   ├── main.tsx
 │   └── index.css
-├── index.html
+├── .env.example      # Ejemplo de variables de entorno
+├── .github/workflows/ # Deploy a GitHub Pages
 ├── package.json
 └── vite.config.ts
 ```
 
-## 🛠️ Installation
+## 🛠️ Instalación
 
-1. **Clone the repository**
+1. **Clonar el repositorio**
    ```bash
-   git clone <repository-url>
-   cd portfolio-react
+   git clone <url-del-repo>
+   cd Portafolio_React
    ```
 
-2. **Install dependencies**
+2. **Instalar dependencias**
    ```bash
    npm install
    ```
 
-3. **Start development server**
+3. **Variables de entorno** (ver sección siguiente)
+   ```bash
+   copy .env.example .env
+   ```
+   Editar `.env` con tus valores.
+
+4. **Arrancar en desarrollo**
    ```bash
    npm run dev
    ```
 
-4. **Build for production**
+5. **Build para producción**
    ```bash
    npm run build
    ```
 
-5. **Preview production build**
+6. **Previsualizar el build**
    ```bash
    npm run preview
    ```
 
-## 📦 Deployment to GitHub Pages
+---
 
-### Method 1: Using GitHub Actions (Recommended)
+## ⚙️ Configuración
 
-1. **Create `.github/workflows/deploy.yml`**:
-   ```yaml
-   name: Deploy to GitHub Pages
-   
-   on:
-     push:
-       branches: [ main ]
-   
-   jobs:
-     build-and-deploy:
-       runs-on: ubuntu-latest
-       steps:
-         - uses: actions/checkout@v3
-         - uses: actions/setup-node@v3
-           with:
-             node-version: '18'
-         - run: npm install
-         - run: npm run build
-         - uses: peaceiris/actions-gh-pages@v3
-           with:
-             github_token: ${{ secrets.GITHUB_TOKEN }}
-             publish_dir: ./dist
+### Variables de entorno
+
+En la raíz del proyecto existe `.env.example`. Copialo a `.env` y completá los valores. **No subas `.env` a Git** (está en `.gitignore`).
+
+| Variable | Obligatoria | Descripción |
+|----------|-------------|-------------|
+| `VITE_EMAILJS_PUBLIC_KEY` | Sí (para contacto) | Public Key de tu cuenta EmailJS |
+| `VITE_EMAILJS_SERVICE_ID` | Sí (para contacto) | ID del servicio de email (Gmail/Outlook) |
+| `VITE_EMAILJS_TEMPLATE_ID` | Sí (para contacto) | ID de la plantilla de email |
+| `VITE_MASCOT_ENABLED` | No | `true` o `false` – mostrar u ocultar la mascota (por defecto: visible) |
+| `VITE_DEFAULT_THEME` | No | `light` o `dark` – tema por defecto si el usuario no tiene preferencia guardada |
+
+Cualquier variable que empiece con `VITE_` se lee en el código con `import.meta.env.VITE_NOMBRE`.
+
+---
+
+### Configurar EmailJS (formulario de contacto)
+
+Para que los mensajes del formulario lleguen a tu correo:
+
+1. **Cuenta EmailJS**  
+   Crear cuenta o iniciar sesión en [emailjs.com](https://www.emailjs.com/).
+
+2. **Servicio de email**  
+   - En el menú: **Email Services** → **Add New Service**.  
+   - Elegir **Gmail** u **Outlook** y conectar tu cuenta.  
+   - Anotar el **Service ID** (ej: `service_abc123`).
+
+3. **Plantilla de email**  
+   - **Email Templates** → **Create New Template**.  
+   - **Name**: ej. `Contact portfolio`.  
+   - **Content** (cuerpo). Usar exactamente estas variables:
+     - `{{from_name}}` – nombre de quien escribe  
+     - `{{from_email}}` – correo de quien escribe  
+     - `{{message}}` – mensaje  
+
+     Ejemplo de cuerpo:
+     ```
+     Nuevo mensaje desde el portafolio.
+
+     Nombre: {{from_name}}
+     Email: {{from_email}}
+
+     Mensaje:
+     {{message}}
+     ```
+   - **Subject**: ej. `Mensaje del portafolio - {{from_name}}`.  
+   - **To email**: tu correo para recibir los mensajes.  
+   - Anotar el **Template ID** (ej: `template_xyz789`).
+
+4. **Public Key**  
+   En **Account** → **General** (o API), copiar la **Public Key** (User ID).
+
+5. **Completar `.env`**
+   ```env
+   VITE_EMAILJS_PUBLIC_KEY=tu_public_key
+   VITE_EMAILJS_SERVICE_ID=tu_service_id
+   VITE_EMAILJS_TEMPLATE_ID=tu_template_id
    ```
 
-2. **Update `vite.config.ts`** (already configured):
-   ```typescript
-   base: '/portfolio-react/',
-   ```
+6. **Probar**  
+   Reiniciar `npm run dev`, ir a Contact, enviar un mensaje y revisar tu bandeja (y spam). En EmailJS, **History** muestra si el envío se registró o falló.
 
-3. **Push to GitHub** - The workflow will automatically deploy.
+---
 
-### Method 2: Manual Deployment
+## 📦 Despliegue en GitHub Pages
 
-1. **Build the project**:
-   ```bash
-   npm run build
-   ```
+El repo incluye un workflow en `.github/workflows/deploy.yml` que hace build y despliega en GitHub Pages en cada push a `main`.
 
-2. **Install gh-pages**:
-   ```bash
-   npm install --save-dev gh-pages
-   ```
+### Por qué no se sube el `.env`
 
-3. **Add deploy script to `package.json`**:
-   ```json
-   "scripts": {
-     "deploy": "npm run build && gh-pages -d dist"
-   }
-   ```
+El archivo `.env` no se sube al repositorio (está en `.gitignore`) para no exponer claves. En GitHub Actions el build se ejecuta en los servidores de GitHub, donde no existe tu `.env` local. Por eso hay que configurar **Secrets** y **Variables** en el repositorio.
 
-4. **Deploy**:
-   ```bash
-   npm run deploy
-   ```
+### Cómo configurar Secrets y Variables en GitHub
 
-5. **Configure GitHub Pages**:
-   - Go to repository Settings > Pages
-   - Source: `gh-pages` branch
-   - Save
+1. En el repo: **Settings** → **Security** → **Secrets and variables** → **Actions**.
 
-## 🎨 Customization
+2. **Secrets** (datos sensibles; no se muestran en logs):
+   - **New repository secret** y crear estos tres (los usa el workflow):
+     - `VITE_EMAILJS_PUBLIC_KEY` → Public Key de EmailJS  
+     - `VITE_EMAILJS_SERVICE_ID` → ID del servicio  
+     - `VITE_EMAILJS_TEMPLATE_ID` → ID de la plantilla  
 
-### Update Profile Information
+3. **Variables** (config no sensible; opcional):
+   - Pestaña **Variables** → **New repository variable**.  
+   - Si querés fijar comportamiento en producción:
+     - `VITE_MASCOT_ENABLED` → `true` o `false`  
+     - `VITE_DEFAULT_THEME` → `light` o `dark`  
+   - Si no las creás, la mascota se muestra y el tema usa la preferencia del sistema.
 
-Edit `src/data/profile.json` with your information.
+4. Tras guardar Secrets (y opcionalmente Variables), el próximo push a `main` hará el build con esos valores y el formulario de contacto funcionará en GitHub Pages.
 
-### Modify Translations
+### Si no configurás nada en GitHub
 
-Edit `src/i18n/translations.json` to update text content.
+- El sitio se despliega igual.  
+- El formulario de contacto **no** enviará correos (las claves quedarán `undefined` en el build).  
+- Mascota y tema usan los valores por defecto (mascota visible, tema según sistema).
 
-### Change Theme Colors
+---
 
-Modify CSS variables in `src/index.css`:
-```css
-:root {
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  /* ... */
-}
-```
+## 🎨 Personalización
 
-## 📸 Screenshots
+- **Datos del perfil:** editar `src/data/profile.json`.  
+- **Textos e idiomas:** editar `src/i18n/translations.json`.  
+- **Colores del tema:** variables CSS en `src/index.css`.
 
-<!-- Add screenshots here -->
-- Home page
-- About section
-- Experience timeline
-- Skills showcase
-- Projects gallery
-- Contact form
+---
 
-## 👤 Author
+## 👤 Autor
 
-**Tomas Tutor Onetto**
-- Email: tomas2000tutor@gmail.com
-- Phone: +54 2224 445207
-- Location: San Vicente, Buenos Aires, Argentina
+**Tomas Tutor Onetto**  
+Email: tomas2000tutor@gmail.com · Ubicación: Buenos Aires, Argentina
 
-## 📄 License
+---
 
-This project is open source and available under the MIT License.
+## 📄 Licencia
 
-## 🙏 Acknowledgments
-
-- Built with React and Vite
-- Icons and emojis for UI elements
-- Modern CSS for styling
-
+Proyecto de código abierto bajo MIT License.

@@ -133,7 +133,18 @@
         "name": "Name",
         "email": "Email",
         "message": "Message",
-        "send": "Send Message"
+        "send": "Send Message",
+        "errors": {
+          "nameRequired": "Name is required.",
+          "nameMinLength": "Name must have more than 3 characters.",
+          "emailRequired": "Email is required.",
+          "emailInvalid": "Please enter a valid email address.",
+          "messageRequired": "Message is required.",
+          "messageMinWords": "Message must contain more than one word."
+        },
+        "sending": "Sending...",
+        "success": "Message sent! I'll get back to you soon.",
+        "sendError": "Failed to send. Please try again or contact me by email."
       }
     },
     "footer": {
@@ -284,7 +295,18 @@
         "name": "Nombre",
         "email": "Correo",
         "message": "Mensaje",
-        "send": "Enviar Mensaje"
+        "send": "Enviar Mensaje",
+        "errors": {
+          "nameRequired": "El nombre es obligatorio.",
+          "nameMinLength": "El nombre debe tener más de 3 caracteres.",
+          "emailRequired": "El correo es obligatorio.",
+          "emailInvalid": "Ingresá una dirección de correo válida.",
+          "messageRequired": "El mensaje es obligatorio.",
+          "messageMinWords": "El mensaje debe tener más de una palabra."
+        },
+        "sending": "Enviando...",
+        "success": "¡Mensaje enviado! Te responderé pronto.",
+        "sendError": "No se pudo enviar. Probá de nuevo o contactame por correo."
       }
     },
     "footer": {

@@ -4,6 +4,8 @@ export const useTheme = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     const saved = localStorage.getItem('theme')
     if (saved) return saved as 'light' | 'dark'
+    const envDefault = import.meta.env.VITE_DEFAULT_THEME
+    if (envDefault === 'light' || envDefault === 'dark') return envDefault
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   })
 
