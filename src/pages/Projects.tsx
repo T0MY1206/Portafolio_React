@@ -133,8 +133,6 @@ const Projects = () => {
     ? (selectedProject.images?.length ? selectedProject.images : selectedProject.imageUrl ? [selectedProject.imageUrl] : [])
     : []
   const hasCarousel = modalImages.length > 0
-  const canPrev = hasCarousel && modalImages.length > 1
-  const canNext = hasCarousel && modalImages.length > 1
   const goPrev = () => setCarouselIndex((i) => (i <= 0 ? modalImages.length - 1 : i - 1))
   const goNext = () => setCarouselIndex((i) => (i >= modalImages.length - 1 ? 0 : i + 1))
 
