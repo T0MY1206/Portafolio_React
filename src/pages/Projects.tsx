@@ -51,7 +51,6 @@ const TECHS: Record<string, Technology> = {
   openapi: T(41, 'OpenAPI/Scalar', 'TOOL'),
   signals: T(42, 'Angular Signals', 'FRONTEND'),
   maven: T(43, 'Maven', 'TOOL'),
-  dockercompose: T(44, 'Docker Compose', 'TOOL'),
 }
 
 const REPO_URLS: Record<string, string | null> = {
