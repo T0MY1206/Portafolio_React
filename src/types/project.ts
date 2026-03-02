@@ -16,6 +16,8 @@ export interface Project {
   name: string
   description: string
   imageUrl: string | null
+  /** Varias imágenes para el carrusel del modal (si no se define, se usa imageUrl si existe) */
+  images?: string[]
   repositoryUrl: string | null
   repositoryLinks?: ProjectRepositoryLink[]
   liveUrl: string | null

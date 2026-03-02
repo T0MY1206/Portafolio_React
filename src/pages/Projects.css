@@ -25,22 +25,74 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px var(--shadow);
+  cursor: pointer;
+  overflow: hidden;
   --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out),
-    width 0.5s var(--ease-out), min-width 0.5s var(--ease-out),
-    margin 0.5s var(--ease-out), z-index 0.2s ease;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
 }
 
 .project-card:hover {
-  z-index: 10;
-  min-width: min(520px, 90vw);
-  width: 120%;
-  margin-left: -10%;
   transform: translateY(-6px);
-  box-shadow: 0 12px 32px var(--shadow);
+  box-shadow: 0 12px 28px var(--shadow);
+}
+
+.project-card-preview {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.project-card-preview-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.6s var(--ease-out), filter 0.6s var(--ease-out);
+}
+
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.project-card-preview-img.emphasized {
+  opacity: 1;
+  filter: brightness(1);
+  z-index: 1;
+}
+
+.project-card-preview-img.dimmed {
+  opacity: 0.35;
+  filter: brightness(0.5);
+  z-index: 0;
+}
+
+.project-card:not(:hover) .project-card-preview-img.emphasized {
+  opacity: 1;
+  filter: brightness(1);
+}
+
+.project-card:not(:hover) .project-card-preview-img.dimmed {
+  opacity: 0.4;
+  filter: brightness(0.7);
 }
 
 .project-card-header {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -78,6 +130,9 @@
 }
 
 .project-card-description {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
   flex: 1;
   min-height: 0;
   color: var(--text-secondary);
@@ -85,15 +140,11 @@
   margin: 0 0 1rem;
   max-height: 4.8em;
   overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.project-card:hover .project-card-description {
-  max-height: 220px;
-  overflow: hidden;
 }
 
 .project-tags {
+  position: relative;
+  z-index: 2;
   flex-shrink: 0;
   display: flex;
   flex-wrap: wrap;
@@ -106,6 +157,316 @@
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
   font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Modal */
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  animation: project-modal-fade-in 0.2s ease;
+}
+
+@keyframes project-modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.project-modal {
+  position: relative;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 2rem 2.5rem;
+  animation: project-modal-slide 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes project-modal-slide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-modal-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-modal-title-wrap {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  padding-right: 2.5rem;
+}
+
+.project-modal-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.project-modal-repo {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.project-modal-repo-link {
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.project-modal-repo-link:hover {
+  color: var(--accent);
+}
+
+.project-modal-close {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.project-modal-close:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* Carousel – estilo abanico con imagen central y filas a los lados */
+.project-modal-carousel {
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 1.5rem;
+  min-height: 380px;
+}
+
+.project-modal-carousel-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  overflow: visible;
+  padding: 0 2.75rem;
+}
+
+/* Flechas posicionadas absoluto para que siempre se vean */
+.project-modal-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 4rem;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font-size: 3.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s, opacity 0.2s;
+  z-index: 10;
+}
+
+.project-modal-carousel-arrow:hover {
+  color: var(--accent-hover);
+  opacity: 1;
+}
+
+.project-modal-carousel-arrow-left {
+  left: 0;
+}
+
+.project-modal-carousel-arrow-right {
+  right: 0;
+}
+
+/* Fila izquierda: fotos en abanico */
+.project-modal-carousel-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.project-modal-carousel-row-left {
+  flex-shrink: 0;
+  margin-right: 1rem;
+  z-index: 0;
+}
+
+.project-modal-carousel-row-right {
+  flex-shrink: 0;
+  margin-left: 1rem;
+  z-index: 0;
+}
+
+/* Imagen central siempre por encima de las laterales */
+.project-modal-carousel-center {
+  flex-shrink: 0;
+  z-index: 5;
+  position: relative;
+}
+
+/* Imágenes sin bordes blancos */
+.project-modal-carousel-polaroid {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: block;
+  border-radius: 6px;
+}
+
+.project-modal-carousel-polaroid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-modal-carousel-polaroid-main {
+  box-sizing: border-box;
+  width: min(620px, 72vw);
+  height: min(420px, 52vh);
+}
+
+.project-modal-carousel-polaroid-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Laterales: más juntas entre sí y con rotación suave */
+.project-modal-carousel-polaroid-side {
+  box-sizing: border-box;
+  width: 80px;
+  height: 58px;
+  margin: 0 -14px;
+  transition: transform 0.2s ease;
+  border-radius: 4px;
+}
+
+.project-modal-carousel-row-left .project-modal-carousel-polaroid-side:nth-child(1) {
+  transform: rotate(-10deg) translateY(2px);
+  z-index: 0;
+}
+.project-modal-carousel-row-left .project-modal-carousel-polaroid-side:nth-child(2) {
+  transform: rotate(-5deg) translateY(1px);
+  z-index: 0;
+}
+.project-modal-carousel-row-left .project-modal-carousel-polaroid-side:nth-child(3) {
+  transform: rotate(0deg);
+  z-index: 0;
+}
+
+.project-modal-carousel-row-right .project-modal-carousel-polaroid-side:nth-child(1) {
+  transform: rotate(0deg);
+  z-index: 0;
+}
+.project-modal-carousel-row-right .project-modal-carousel-polaroid-side:nth-child(2) {
+  transform: rotate(5deg) translateY(1px);
+  z-index: 0;
+}
+.project-modal-carousel-row-right .project-modal-carousel-polaroid-side:nth-child(3) {
+  transform: rotate(10deg) translateY(2px);
+  z-index: 0;
+}
+
+.project-modal-carousel-polaroid-side:hover {
+  transform: scale(1.05) !important;
+  z-index: 3 !important;
+}
+
+.project-modal-carousel-polaroid-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.project-modal-content-center {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.project-modal-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+  text-align: center;
+}
+
+.project-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-modal-tags span {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.project-modal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.project-modal-link {
+  font-weight: 600;
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+.project-modal-link:hover {
+  color: var(--accent-hover);
 }
 
 @media (max-width: 768px) {
@@ -122,12 +483,6 @@
     height: 300px;
   }
 
-  .project-card:hover {
-    width: 100%;
-    margin-left: 0;
-    min-width: unset;
-  }
-
   .project-card-header {
     flex-direction: column;
     gap: 0.5rem;
@@ -135,6 +490,29 @@
 
   .project-repo-links {
     justify-content: flex-start;
+  }
+
+  .project-modal {
+    padding: 1.5rem;
+  }
+
+  .project-modal-carousel {
+    min-height: 320px;
+  }
+
+  .project-modal-carousel-polaroid-main {
+    width: min(480px, 85vw);
+    height: min(320px, 42vh);
+  }
+
+  .project-modal-carousel-polaroid-side {
+    width: 64px;
+    height: 46px;
+    margin: 0 -4px;
+  }
+
+  .project-modal-carousel-wrap {
+    padding: 0 2rem;
   }
 }
 

@@ -76,6 +76,11 @@
       "title": "Projects",
       "description": "Here are some of my recent projects.",
       "viewRepo": "View repository",
+      "viewDetails": "View project details",
+      "closeModal": "Close",
+      "carouselPrev": "Previous image",
+      "carouselNext": "Next image",
+      "carouselPlaceholder": "Add images to this project",
       "repoFrontend": "Frontend",
       "repoBackend": "Backend",
       "contadores": {
@@ -238,6 +243,11 @@
       "title": "Proyectos",
       "description": "Aquí están algunos de mis proyectos recientes.",
       "viewRepo": "Ver repositorio",
+      "viewDetails": "Ver detalle del proyecto",
+      "closeModal": "Cerrar",
+      "carouselPrev": "Imagen anterior",
+      "carouselNext": "Imagen siguiente",
+      "carouselPlaceholder": "Agregar imágenes a este proyecto",
       "repoFrontend": "Frontend",
       "repoBackend": "Backend",
       "contadores": {
