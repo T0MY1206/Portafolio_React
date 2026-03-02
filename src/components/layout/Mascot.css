@@ -30,7 +30,6 @@
   image-rendering: crisp-edges;
 }
 
-/* Brazos: origen en el hombro para rotar */
 .mascot-arm {
   transform-box: fill-box;
   transition: transform 0.25s ease;

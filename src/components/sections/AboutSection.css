@@ -8,14 +8,6 @@
   margin: 0 auto;
 }
 
-.page-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  text-align: center;
-  color: var(--text-primary);
-}
-
 .about-content {
   display: flex;
   flex-direction: column;
@@ -136,11 +128,6 @@
     padding: 2rem 1rem;
   }
 
-  .page-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-
   .about-section {
     padding: 1.5rem;
   }
@@ -149,4 +136,3 @@
     font-size: 1rem;
   }
 }
-

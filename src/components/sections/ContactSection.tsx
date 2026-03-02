@@ -1,94 +1,29 @@
-import { useState } from 'react'
-import emailjs from '@emailjs/browser'
-import { useLanguage } from '../context/LanguageContext'
-import profileData from '../data/profile.json'
-import './Contact.css'
+import { useLanguage } from '../../context/LanguageContext'
+import { useContactForm } from '../../hooks/useContactForm'
+import profileData from '../../data/profile.json'
+import PageTitle from '../ui/PageTitle'
+import Button from '../ui/Button'
+import './ContactSection.css'
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-const Contact = () => {
+const ContactSection = () => {
   const { t } = useLanguage()
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-  const [errors, setErrors] = useState({ name: '', email: '', message: '' })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const name = formData.name.trim()
-    const email = formData.email.trim()
-    const message = formData.message.trim()
-
-    const newErrors = { name: '', email: '', message: '' }
-
-    if (!name) {
-      newErrors.name = t('contact.form.errors.nameRequired')
-    } else if (name.length <= 3) {
-      newErrors.name = t('contact.form.errors.nameMinLength')
-    }
-
-    if (!email) {
-      newErrors.email = t('contact.form.errors.emailRequired')
-    } else if (!EMAIL_REGEX.test(email)) {
-      newErrors.email = t('contact.form.errors.emailInvalid')
-    }
-
-    if (!message) {
-      newErrors.message = t('contact.form.errors.messageRequired')
-    } else if (message.split(/\s+/).filter(Boolean).length <= 1) {
-      newErrors.message = t('contact.form.errors.messageMinWords')
-    }
-
-    setErrors(newErrors)
-    setSubmitStatus('idle')
-
-    const hasErrors = Object.values(newErrors).some(Boolean)
-    if (hasErrors) return
-
-    if (!publicKey || !serviceId || !templateId) {
-      setSubmitStatus('error')
-      return
-    }
-
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
-
-    try {
-      await emailjs.send(serviceId, templateId, {
-        from_name: name,
-        from_email: email,
-        message
-      }, publicKey)
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', message: '' })
-      setErrors({ name: '', email: '', message: '' })
-    } catch {
-      setSubmitStatus('error')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-    if (errors[name as keyof typeof errors]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }))
-    }
-  }
+  const {
+    formData,
+    errors,
+    isSubmitting,
+    submitStatus,
+    handleSubmit,
+    handleChange,
+  } = useContactForm({ t, publicKey, serviceId, templateId })
 
   return (
     <section className="contact">
       <div className="contact-container">
-        <h1 className="page-title">{t('contact.title')}</h1>
+        <PageTitle>{t('contact.title')}</PageTitle>
         <div className="contact-content">
           <div className="contact-info">
             <div className="contact-item">
@@ -181,13 +116,13 @@ const Contact = () => {
                 {t('contact.form.sendError')}
               </p>
             )}
-            <button
+            <Button
               type="submit"
-              className="btn btn-primary"
+              variant="primary"
               disabled={isSubmitting}
             >
               {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
-            </button>
+            </Button>
           </form>
         </div>
       </div>
@@ -195,5 +130,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
-
+export default ContactSection

@@ -160,7 +160,6 @@
   font-weight: bold;
 }
 
-/* Modal */
 .project-modal-overlay {
   position: fixed;
   inset: 0;
@@ -265,7 +264,6 @@
   color: var(--accent);
 }
 
-/* Carousel – estilo abanico con imagen central y filas a los lados */
 .project-modal-carousel {
   flex-shrink: 0;
   position: relative;
@@ -283,7 +281,6 @@
   padding: 0 2.75rem;
 }
 
-/* Flechas posicionadas absoluto para que siempre se vean */
 .project-modal-carousel-arrow {
   position: absolute;
   top: 50%;
@@ -317,7 +314,6 @@
   right: 0;
 }
 
-/* Fila izquierda: fotos en abanico */
 .project-modal-carousel-row {
   display: flex;
   align-items: center;
@@ -337,14 +333,12 @@
   z-index: 0;
 }
 
-/* Imagen central siempre por encima de las laterales */
 .project-modal-carousel-center {
   flex-shrink: 0;
   z-index: 5;
   position: relative;
 }
 
-/* Imágenes sin bordes blancos */
 .project-modal-carousel-polaroid {
   border: none;
   padding: 0;
@@ -376,7 +370,6 @@
   object-position: center;
 }
 
-/* Laterales: más juntas entre sí y con rotación suave */
 .project-modal-carousel-polaroid-side {
   box-sizing: border-box;
   width: 80px;
@@ -423,7 +416,6 @@
   object-fit: cover;
 }
 
-
 .project-modal-content-center {
   max-width: 520px;
   margin: 0 auto;
@@ -451,22 +443,6 @@
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: bold;
-}
-
-.project-modal-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.project-modal-link {
-  font-weight: 600;
-  color: var(--accent);
-  transition: color 0.2s;
-}
-
-.project-modal-link:hover {
-  color: var(--accent-hover);
 }
 
 @media (max-width: 768px) {
@@ -515,4 +491,3 @@
     padding: 0 2rem;
   }
 }
-

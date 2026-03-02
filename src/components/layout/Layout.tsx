@@ -9,6 +9,8 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const showMascot = import.meta.env.VITE_MASCOT_ENABLED !== 'false'
+
   return (
     <div className="layout">
       <Navbar />
@@ -18,10 +20,9 @@ const Layout = ({ children }: LayoutProps) => {
         </div>
       </main>
       <Footer />
-      {import.meta.env.VITE_MASCOT_ENABLED !== 'false' && <Mascot />}
+      {showMascot && <Mascot />}
     </div>
   )
 }
 
 export default Layout
-

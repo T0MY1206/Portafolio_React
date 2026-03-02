@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import { useLanguage } from '../context/LanguageContext'
-import './Home.css'
+import { useLanguage } from '../../context/LanguageContext'
+import Button from '../ui/Button'
+import './HomeSection.css'
 
-const Home = () => {
+const HomeSection = () => {
   const { t } = useLanguage()
 
   return (
@@ -13,12 +13,12 @@ const Home = () => {
           <h2 className="home-subtitle">{t('home.subtitle')}</h2>
           <p className="home-location">{t('home.location')}</p>
           <div className="home-cta">
-            <Link to="/projects" className="btn btn-primary">
+            <Button variant="primary" to="/projects">
               {t('home.cta')}
-            </Link>
-            <Link to="/contact" className="btn btn-secondary">
+            </Button>
+            <Button variant="secondary" to="/contact">
               {t('nav.contact')}
-            </Link>
+            </Button>
           </div>
         </div>
       </div>
@@ -26,5 +26,4 @@ const Home = () => {
   )
 }
 
-export default Home
-
+export default HomeSection

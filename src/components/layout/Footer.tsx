@@ -1,4 +1,4 @@
-import { useLanguage } from '../context/LanguageContext'
+import { useLanguage } from '../../context/LanguageContext'
 import './Footer.css'
 
 const Footer = () => {
@@ -14,4 +14,3 @@ const Footer = () => {
 }
 
 export default Footer
-

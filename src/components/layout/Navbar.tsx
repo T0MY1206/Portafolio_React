@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useLanguage } from '../context/LanguageContext'
-import { useTheme } from '../hooks/useTheme'
+import { useLanguage } from '../../context/LanguageContext'
+import { useTheme } from '../../hooks/useTheme'
+import { NAV_LINKS } from '../../constants/routes'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -11,17 +12,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const isActive = (path: string) => location.pathname === path
-
   const closeMenu = () => setMenuOpen(false)
-
-  const navLinks = [
-    { path: '/', key: 'nav.home' },
-    { path: '/about', key: 'nav.about' },
-    { path: '/experience', key: 'nav.experience' },
-    { path: '/skills', key: 'nav.skills' },
-    { path: '/projects', key: 'nav.projects' },
-    { path: '/contact', key: 'nav.contact' },
-  ]
 
   return (
     <nav className="navbar">
@@ -43,20 +34,32 @@ const Navbar = () => {
         <div className={`navbar-dropdown ${menuOpen ? 'navbar-dropdown-open' : ''}`}>
           <div className="navbar-menu-wrapper">
             <ul className="navbar-menu">
-              {navLinks.map(({ path, key }) => (
-              <li key={path}>
-                <Link to={path} className={isActive(path) ? 'active' : ''} onClick={closeMenu}>
-                  {t(key)}
-                </Link>
-              </li>
-            ))}
+              {NAV_LINKS.map(({ path, key }) => (
+                <li key={path}>
+                  <Link
+                    to={path}
+                    className={isActive(path) ? 'active' : ''}
+                    onClick={closeMenu}
+                  >
+                    {t(key)}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="navbar-controls navbar-controls-in-menu">
-            <button onClick={toggleLanguage} className="lang-toggle" aria-label="Toggle language">
+            <button
+              onClick={toggleLanguage}
+              className="lang-toggle"
+              aria-label="Toggle language"
+            >
               {language === 'en' ? 'ES' : 'EN'}
             </button>
-            <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
+            <button
+              onClick={toggleTheme}
+              className="theme-toggle"
+              aria-label="Toggle theme"
+            >
               {theme === 'light' ? '🌙' : '☀️'}
             </button>
           </div>
@@ -67,4 +70,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
