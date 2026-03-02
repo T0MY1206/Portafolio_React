@@ -68,9 +68,15 @@ const REPO_URLS: Record<string, string | null> = {
 }
 
 const BASE_URL = import.meta.env.BASE_URL || '/'
-const BOCATO_IMAGES: string[] = (bocatoImageFilenames as string[]).map(
+const BOCATO_FIRST_IMAGE = 'c__Users_tomas_AppData_Roaming_Cursor_User_workspaceStorage_697e9fbe3ecaa62adccfad828f533f29_images_Captura_de_pantalla_2025-12-11_200726-aa4576fd-39ba-4fc5-a026-c67d507dc260.png'
+const bocatoUrls = (bocatoImageFilenames as string[]).map(
   (name) => `${BASE_URL}assets/bocato/${encodeURIComponent(name)}`
 )
+const BOCATO_IMAGES: string[] = (() => {
+  const firstUrl = `${BASE_URL}assets/bocato/${encodeURIComponent(BOCATO_FIRST_IMAGE)}`
+  const rest = bocatoUrls.filter((u) => u !== firstUrl)
+  return rest.length < bocatoUrls.length ? [firstUrl, ...rest] : bocatoUrls
+})()
 
 const REPO_LINKS: Record<string, { labelKey: string; url: string }[]> = {
   tarjetaCredito: [
