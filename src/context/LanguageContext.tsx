@@ -22,17 +22,21 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem('language', language)
   }, [language])
 
+  useEffect(() => {
+    document.documentElement.lang = language
+  }, [language])
+
   const t = (key: string): string => {
     const keys = key.split('.')
-    let value: any = translations[language]
+    let value: unknown = translations[language]
     for (const k of keys) {
-      value = value?.[k]
+      value = (value as Record<string, unknown>)?.[k]
     }
-    return value || key
+    return (value as string) || key
   }
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'es' : 'en')
+    setLanguage((prev) => (prev === 'en' ? 'es' : 'en'))
   }
 
   return (

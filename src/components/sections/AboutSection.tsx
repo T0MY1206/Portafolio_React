@@ -1,5 +1,6 @@
 import { useLanguage } from '../../context/LanguageContext'
 import PageTitle from '../ui/PageTitle'
+import PageMeta from '../ui/PageMeta'
 import './AboutSection.css'
 
 const EDUCATION_ITEMS: { labelKey: string; src: string; title: string }[] = [
@@ -21,15 +22,16 @@ const AboutSection = () => {
   const basePath = import.meta.env.BASE_URL || '/'
 
   return (
-    <section className="about">
+    <section className="about" aria-labelledby="about-heading">
+      <PageMeta title={t('meta.titleAbout')} description={t('meta.descAbout')} />
       <div className="about-container">
-        <PageTitle>{t('about.title')}</PageTitle>
+        <PageTitle id="about-heading">{t('about.title')}</PageTitle>
         <div className="about-content">
           <div className="about-section">
             <p className="about-summary">{t('about.summary')}</p>
           </div>
-          <div className="about-section">
-            <h2>{t('about.education.title')}</h2>
+          <section className="about-section" aria-labelledby="about-education">
+            <h2 id="about-education">{t('about.education.title')}</h2>
             <ul className="education-list">
               {EDUCATION_ITEMS.map((item) => (
                 <li key={item.labelKey} className="education-item">
@@ -44,15 +46,15 @@ const AboutSection = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="about-section">
-            <h2>{t('about.languages.title')}</h2>
+          </section>
+          <section className="about-section" aria-labelledby="about-languages">
+            <h2 id="about-languages">{t('about.languages.title')}</h2>
             <ul className="languages-list">
               <li>{t('about.languages.spanish')}</li>
               <li>{t('about.languages.english')}</li>
               <li>{t('about.languages.italian')}</li>
             </ul>
-          </div>
+          </section>
         </div>
       </div>
     </section>

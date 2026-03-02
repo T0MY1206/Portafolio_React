@@ -6,7 +6,12 @@
       "experience": "Experience",
       "skills": "Skills",
       "projects": "Projects",
-      "contact": "Contact"
+      "contact": "Contact",
+      "menuOpen": "Open menu",
+      "menuClose": "Close menu",
+      "toggleLang": "Switch to Spanish",
+      "toggleTheme": "Toggle dark mode",
+      "skipToContent": "Skip to main content"
     },
     "home": {
       "title": "Tomas Tutor Onetto",
@@ -81,6 +86,7 @@
       "carouselPrev": "Previous image",
       "carouselNext": "Next image",
       "carouselPlaceholder": "Add images to this project",
+      "imageAlt": "Screenshot",
       "repoFrontend": "Frontend",
       "repoBackend": "Backend",
       "contadores": {
@@ -152,6 +158,20 @@
         "sendError": "Failed to send. Please try again or contact me by email."
       }
     },
+    "meta": {
+      "titleHome": "Tomas Tutor Onetto | Software Developer & Technical Leader",
+      "descHome": "Portfolio of Tomas Tutor Onetto - Full Stack Developer and Technical Lead based in Buenos Aires, Argentina.",
+      "titleAbout": "About Me | Tomas Tutor Onetto",
+      "descAbout": "Full Stack Developer and Technical Lead with over 4 years of experience. Education, languages and professional profile.",
+      "titleExperience": "Experience | Tomas Tutor Onetto",
+      "descExperience": "Professional experience: Full Stack Developer, Technical Leader, Teaching Assistant and IT Support.",
+      "titleSkills": "Skills | Tomas Tutor Onetto",
+      "descSkills": "Technical skills: Frontend, Backend, Databases and Tools.",
+      "titleProjects": "Projects | Tomas Tutor Onetto",
+      "descProjects": "Recent projects: web apps, APIs, mobile and desktop applications.",
+      "titleContact": "Contact | Tomas Tutor Onetto",
+      "descContact": "Get in touch with Tomas Tutor Onetto. Email, phone and contact form."
+    },
     "footer": {
       "text": "© 2025 Tomas Tutor Onetto. All rights reserved."
     },
@@ -173,7 +193,12 @@
       "experience": "Experiencia",
       "skills": "Habilidades",
       "projects": "Proyectos",
-      "contact": "Contacto"
+      "contact": "Contacto",
+      "menuOpen": "Abrir menú",
+      "menuClose": "Cerrar menú",
+      "toggleLang": "Cambiar a inglés",
+      "toggleTheme": "Alternar modo oscuro",
+      "skipToContent": "Ir al contenido principal"
     },
     "home": {
       "title": "Tomas Tutor Onetto",
@@ -248,6 +273,7 @@
       "carouselPrev": "Imagen anterior",
       "carouselNext": "Imagen siguiente",
       "carouselPlaceholder": "Agregar imágenes a este proyecto",
+      "imageAlt": "Captura",
       "repoFrontend": "Frontend",
       "repoBackend": "Backend",
       "contadores": {
@@ -318,6 +344,20 @@
         "success": "¡Mensaje enviado! Te responderé pronto.",
         "sendError": "No se pudo enviar. Probá de nuevo o contactame por correo."
       }
+    },
+    "meta": {
+      "titleHome": "Tomas Tutor Onetto | Desarrollador de Software y Líder Técnico",
+      "descHome": "Portafolio de Tomas Tutor Onetto - Desarrollador Full Stack y Líder Técnico en Buenos Aires, Argentina.",
+      "titleAbout": "Sobre Mí | Tomas Tutor Onetto",
+      "descAbout": "Desarrollador Full Stack y Líder Técnico con más de 4 años de experiencia. Educación, idiomas y perfil profesional.",
+      "titleExperience": "Experiencia | Tomas Tutor Onetto",
+      "descExperience": "Experiencia profesional: Desarrollador Full Stack, Líder Técnico, Ayudante de Cátedra y Soporte IT.",
+      "titleSkills": "Habilidades | Tomas Tutor Onetto",
+      "descSkills": "Habilidades técnicas: Frontend, Backend, Bases de Datos y Herramientas.",
+      "titleProjects": "Proyectos | Tomas Tutor Onetto",
+      "descProjects": "Proyectos recientes: aplicaciones web, APIs, móviles y de escritorio.",
+      "titleContact": "Contacto | Tomas Tutor Onetto",
+      "descContact": "Contactá a Tomas Tutor Onetto. Correo, teléfono y formulario de contacto."
     },
     "footer": {
       "text": "© 2025 Tomas Tutor Onetto. Todos los derechos reservados."

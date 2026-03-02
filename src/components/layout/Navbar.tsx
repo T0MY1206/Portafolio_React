@@ -24,7 +24,7 @@ const Navbar = () => {
           type="button"
           className="navbar-burger"
           onClick={() => setMenuOpen((o) => !o)}
-          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-label={menuOpen ? t('nav.menuClose') : t('nav.menuOpen')}
           aria-expanded={menuOpen}
         >
           <span className="navbar-burger-bar" />
@@ -51,14 +51,14 @@ const Navbar = () => {
             <button
               onClick={toggleLanguage}
               className="lang-toggle"
-              aria-label="Toggle language"
+              aria-label={t('nav.toggleLang')}
             >
               {language === 'en' ? 'ES' : 'EN'}
             </button>
             <button
               onClick={toggleTheme}
               className="theme-toggle"
-              aria-label="Toggle theme"
+              aria-label={t('nav.toggleTheme')}
             >
               {theme === 'light' ? '🌙' : '☀️'}
             </button>

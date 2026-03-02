@@ -1,23 +1,35 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
-import HomeSection from './components/sections/HomeSection'
-import AboutSection from './components/sections/AboutSection'
-import ExperienceSection from './components/sections/ExperienceSection'
-import SkillsSection from './components/sections/SkillsSection'
-import ProjectsSection from './components/sections/ProjectsSection'
-import ContactSection from './components/sections/ContactSection'
+
+const HomeSection = lazy(() => import('./components/sections/HomeSection'))
+const AboutSection = lazy(() => import('./components/sections/AboutSection'))
+const ExperienceSection = lazy(() => import('./components/sections/ExperienceSection'))
+const SkillsSection = lazy(() => import('./components/sections/SkillsSection'))
+const ProjectsSection = lazy(() => import('./components/sections/ProjectsSection'))
+const ContactSection = lazy(() => import('./components/sections/ContactSection'))
+
+function SectionFallback() {
+  return (
+    <div className="section-fallback" role="status" aria-live="polite">
+      <span aria-hidden>Loading…</span>
+    </div>
+  )
+}
 
 function App() {
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<HomeSection />} />
-        <Route path="/about" element={<AboutSection />} />
-        <Route path="/experience" element={<ExperienceSection />} />
-        <Route path="/skills" element={<SkillsSection />} />
-        <Route path="/projects" element={<ProjectsSection />} />
-        <Route path="/contact" element={<ContactSection />} />
-      </Routes>
+      <Suspense fallback={<SectionFallback />}>
+        <Routes>
+          <Route path="/" element={<HomeSection />} />
+          <Route path="/about" element={<AboutSection />} />
+          <Route path="/experience" element={<ExperienceSection />} />
+          <Route path="/skills" element={<SkillsSection />} />
+          <Route path="/projects" element={<ProjectsSection />} />
+          <Route path="/contact" element={<ContactSection />} />
+        </Routes>
+      </Suspense>
     </Layout>
   )
 }

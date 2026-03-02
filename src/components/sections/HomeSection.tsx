@@ -1,12 +1,14 @@
 import { useLanguage } from '../../context/LanguageContext'
 import Button from '../ui/Button'
+import PageMeta from '../ui/PageMeta'
 import './HomeSection.css'
 
 const HomeSection = () => {
   const { t } = useLanguage()
 
   return (
-    <section className="home">
+    <section className="home" aria-label={t('nav.home')}>
+      <PageMeta title={t('meta.titleHome')} description={t('meta.descHome')} />
       <div className="home-container">
         <div className="home-content">
           <h1 className="home-title">{t('home.title')}</h1>

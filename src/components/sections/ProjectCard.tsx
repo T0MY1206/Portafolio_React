@@ -1,4 +1,6 @@
+import { memo } from 'react'
 import type { Project } from '../../types/project'
+import { useLanguage } from '../../context/LanguageContext'
 import { getProjectImages } from '../../utils/projects'
 
 interface ProjectCardProps {
@@ -8,28 +10,23 @@ interface ProjectCardProps {
   onSelect: (project: Project) => void
   onMouseEnter: (project: Project) => void
   onMouseLeave: () => void
-  viewDetailsLabel: string
-  viewRepoLabel: string
-  t: (key: string) => string
 }
 
-const ProjectCard = ({
+const ProjectCard = memo(function ProjectCard({
   project,
   isHovered,
   currentImageIndex,
   onSelect,
   onMouseEnter,
   onMouseLeave,
-  viewDetailsLabel,
-  viewRepoLabel,
-  t,
-}: ProjectCardProps) => {
+}: ProjectCardProps) {
+  const { t } = useLanguage()
   const images = getProjectImages(project)
 
-  const handleKeyDown = (e: React.KeyboardEvent, p: Project) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
-      onSelect(p)
+      onSelect(project)
     }
   }
 
@@ -44,8 +41,8 @@ const ProjectCard = ({
       }}
       onMouseEnter={() => onMouseEnter(project)}
       onMouseLeave={onMouseLeave}
-      onKeyDown={(e) => handleKeyDown(e, project)}
-      aria-label={viewDetailsLabel}
+      onKeyDown={handleKeyDown}
+      aria-label={t('projects.viewDetails')}
     >
       {images.length > 0 && (
         <>
@@ -55,7 +52,7 @@ const ProjectCard = ({
               const isEmphasized = i === idx
               return (
                 <div
-                  key={i}
+                  key={`${project.id}-img-${i}`}
                   className={`project-card-preview-img ${isEmphasized ? 'emphasized' : 'dimmed'}`}
                   style={{ backgroundImage: `url(${src})` }}
                 />
@@ -91,7 +88,7 @@ const ProjectCard = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-repo-link"
-                    aria-label={viewRepoLabel}
+                    aria-label={t('projects.viewRepo')}
                   >
                     {t('projects.viewRepo')}
                   </a>
@@ -107,6 +104,6 @@ const ProjectCard = ({
       </div>
     </div>
   )
-}
+})
 
 export default ProjectCard

@@ -1,5 +1,6 @@
 import { useLanguage } from '../../context/LanguageContext'
 import PageTitle from '../ui/PageTitle'
+import PageMeta from '../ui/PageMeta'
 import profileData from '../../data/profile.json'
 import './SkillsSection.css'
 
@@ -14,13 +15,14 @@ const SkillsSection = () => {
   const { t } = useLanguage()
 
   return (
-    <section className="skills">
+    <section className="skills" aria-labelledby="skills-heading">
+      <PageMeta title={t('meta.titleSkills')} description={t('meta.descSkills')} />
       <div className="skills-container">
-        <PageTitle>{t('skills.title')}</PageTitle>
+        <PageTitle id="skills-heading">{t('skills.title')}</PageTitle>
         <div className="skills-grid">
           {SKILL_CATEGORIES.map(({ key, skills }) => (
-            <div key={key} className="skills-category">
-              <h2>{t(key)}</h2>
+            <section key={key} className="skills-category" aria-labelledby={`skills-${key.replace('.', '-')}`}>
+              <h2 id={`skills-${key.replace('.', '-')}`}>{t(key)}</h2>
               <div className="skills-list">
                 {skills.map((skill) => (
                   <span key={skill} className="skill-tag">
@@ -28,7 +30,7 @@ const SkillsSection = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </section>
           ))}
         </div>
       </div>

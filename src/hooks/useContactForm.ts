@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { isValidEmail } from '../utils/validation'
 
@@ -42,90 +42,77 @@ export function useContactForm({
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle')
 
-  const validate = useCallback(
-    (name: string, email: string, message: string): ContactFormErrors => {
-      const newErrors: ContactFormErrors = { name: '', email: '', message: '' }
+  const validate = (
+    name: string,
+    email: string,
+    message: string
+  ): ContactFormErrors => {
+    const newErrors: ContactFormErrors = { name: '', email: '', message: '' }
 
-      if (!name) {
-        newErrors.name = t('contact.form.errors.nameRequired')
-      } else if (name.length <= 3) {
-        newErrors.name = t('contact.form.errors.nameMinLength')
-      }
+    if (!name) {
+      newErrors.name = t('contact.form.errors.nameRequired')
+    } else if (name.length <= 3) {
+      newErrors.name = t('contact.form.errors.nameMinLength')
+    }
 
-      if (!email) {
-        newErrors.email = t('contact.form.errors.emailRequired')
-      } else if (!isValidEmail(email)) {
-        newErrors.email = t('contact.form.errors.emailInvalid')
-      }
+    if (!email) {
+      newErrors.email = t('contact.form.errors.emailRequired')
+    } else if (!isValidEmail(email)) {
+      newErrors.email = t('contact.form.errors.emailInvalid')
+    }
 
-      if (!message) {
-        newErrors.message = t('contact.form.errors.messageRequired')
-      } else if (message.split(/\s+/).filter(Boolean).length <= 1) {
-        newErrors.message = t('contact.form.errors.messageMinWords')
-      }
+    if (!message) {
+      newErrors.message = t('contact.form.errors.messageRequired')
+    } else if (message.split(/\s+/).filter(Boolean).length <= 1) {
+      newErrors.message = t('contact.form.errors.messageMinWords')
+    }
 
-      return newErrors
-    },
-    [t]
-  )
+    return newErrors
+  }
 
-  const handleSubmit = useCallback(
-    async (e: React.FormEvent) => {
-      e.preventDefault()
-      const name = formData.name.trim()
-      const email = formData.email.trim()
-      const message = formData.message.trim()
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const name = formData.name.trim()
+    const email = formData.email.trim()
+    const message = formData.message.trim()
 
-      const newErrors = validate(name, email, message)
-      setErrors(newErrors)
-      setSubmitStatus('idle')
+    const newErrors = validate(name, email, message)
+    setErrors(newErrors)
+    setSubmitStatus('idle')
 
-      if (Object.values(newErrors).some(Boolean)) return
+    if (Object.values(newErrors).some(Boolean)) return
 
-      if (!publicKey || !serviceId || !templateId) {
-        setSubmitStatus('error')
-        return
-      }
+    if (!publicKey || !serviceId || !templateId) {
+      setSubmitStatus('error')
+      return
+    }
 
-      setIsSubmitting(true)
+    setIsSubmitting(true)
 
-      try {
-        await emailjs.send(
-          serviceId,
-          templateId,
-          { from_name: name, from_email: email, message },
-          publicKey
-        )
-        setSubmitStatus('success')
-        setFormData({ name: '', email: '', message: '' })
-        setErrors({ name: '', email: '', message: '' })
-      } catch {
-        setSubmitStatus('error')
-      } finally {
-        setIsSubmitting(false)
-      }
-    },
-    [
-      formData.name,
-      formData.email,
-      formData.message,
-      validate,
-      publicKey,
-      serviceId,
-      templateId,
-    ]
-  )
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        { from_name: name, from_email: email, message },
+        publicKey
+      )
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+      setErrors({ name: '', email: '', message: '' })
+    } catch {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
-  const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      const { name, value } = e.target
-      setFormData((prev) => ({ ...prev, [name]: value }))
-      if (errors[name as keyof ContactFormErrors]) {
-        setErrors((prev) => ({ ...prev, [name]: '' }))
-      }
-    },
-    [errors]
-  )
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    setErrors((prev) => ({ ...prev, [name]: '' }))
+  }
 
   return {
     formData,

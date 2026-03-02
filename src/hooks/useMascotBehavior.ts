@@ -18,7 +18,10 @@ export function useMascotBehavior(
 ) {
   const section = PATH_TO_SECTION[pathname] ?? 'home'
 
-  const [position, setPosition] = useState({ x: 15, y: 20 })
+  const [position, setPosition] = useState(() => ({
+    x: 5 + Math.random() * 90,
+    y: 10 + Math.random() * 75,
+  }))
   const [comment, setComment] = useState<string | null>(null)
   const [visible, setVisible] = useState(true)
   const [acting, setActing] = useState(false)
@@ -28,13 +31,6 @@ export function useMascotBehavior(
   const actionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const moveToTargetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const commentClearRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  const moveToRandom = useCallback(() => {
-    setPosition({
-      x: 5 + Math.random() * 90,
-      y: 10 + Math.random() * 75,
-    })
-  }, [])
 
   const positionNearElement = useCallback((el: HTMLElement) => {
     const rect = el.getBoundingClientRect()
@@ -60,10 +56,6 @@ export function useMascotBehavior(
     }
     setActing(false)
   }, [])
-
-  useEffect(() => {
-    moveToRandom()
-  }, [moveToRandom])
 
   useEffect(() => {
     if (!visible) return

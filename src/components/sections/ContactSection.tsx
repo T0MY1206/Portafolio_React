@@ -2,6 +2,7 @@ import { useLanguage } from '../../context/LanguageContext'
 import { useContactForm } from '../../hooks/useContactForm'
 import profileData from '../../data/profile.json'
 import PageTitle from '../ui/PageTitle'
+import PageMeta from '../ui/PageMeta'
 import Button from '../ui/Button'
 import './ContactSection.css'
 
@@ -21,13 +22,14 @@ const ContactSection = () => {
   } = useContactForm({ t, publicKey, serviceId, templateId })
 
   return (
-    <section className="contact">
+    <section className="contact" aria-labelledby="contact-heading">
+      <PageMeta title={t('meta.titleContact')} description={t('meta.descContact')} />
       <div className="contact-container">
-        <PageTitle>{t('contact.title')}</PageTitle>
+        <PageTitle id="contact-heading">{t('contact.title')}</PageTitle>
         <div className="contact-content">
-          <div className="contact-info">
+          <address className="contact-info" aria-label={t('contact.subtitle')}>
             <div className="contact-item">
-              <h3>{t('contact.email')}</h3>
+              <h2>{t('contact.email')}</h2>
               <a
                 href={`https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(profileData.personal.email)}`}
                 target="_blank"
@@ -37,7 +39,7 @@ const ContactSection = () => {
               </a>
             </div>
             <div className="contact-item">
-              <h3>{t('contact.phone')}</h3>
+              <h2>{t('contact.phone')}</h2>
               <a
                 href={`https://wa.me/${profileData.personal.phone.replace(/\D/g, '')}`}
                 target="_blank"
@@ -47,10 +49,10 @@ const ContactSection = () => {
               </a>
             </div>
             <div className="contact-item">
-              <h3>{t('contact.location')}</h3>
+              <h2>{t('contact.location')}</h2>
               <p>{profileData.personal.location}</p>
             </div>
-          </div>
+          </address>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">{t('contact.form.name')}</label>
