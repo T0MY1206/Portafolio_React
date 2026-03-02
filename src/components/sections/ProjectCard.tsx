@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import type { Project } from '../../types/project'
 import { useLanguage } from '../../context/LanguageContext'
 import { getProjectImages } from '../../utils/projects'
@@ -12,7 +11,7 @@ interface ProjectCardProps {
   onMouseLeave: () => void
 }
 
-const ProjectCard = memo(function ProjectCard({
+export default function ProjectCard({
   project,
   isHovered,
   currentImageIndex,
@@ -104,6 +103,4 @@ const ProjectCard = memo(function ProjectCard({
       </div>
     </div>
   )
-})
-
-export default ProjectCard
+}

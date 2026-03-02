@@ -138,6 +138,11 @@
   color: white;
 }
 
+.mascot-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 @media (max-width: 768px) {
   .mascot {
     width: 52px;

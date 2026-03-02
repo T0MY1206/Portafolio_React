@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
+import { send as emailjsSend } from '@emailjs/browser'
 import { isValidEmail } from '../utils/validation'
 
 export interface ContactFormState {
@@ -23,6 +23,10 @@ interface UseContactFormOptions {
   templateId: string | undefined
 }
 
+/**
+ * Handles contact form state, validation and submission via EmailJS.
+ * Returns form data, validation errors, submit status and handlers for inputs and submit.
+ */
 export function useContactForm({
   t,
   publicKey,
@@ -90,11 +94,11 @@ export function useContactForm({
     setIsSubmitting(true)
 
     try {
-      await emailjs.send(
+      await emailjsSend(
         serviceId,
         templateId,
         { from_name: name, from_email: email, message },
-        publicKey
+        { publicKey: publicKey! }
       )
       setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })

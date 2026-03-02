@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '../../context/LanguageContext'
 import { buildProjects } from '../../constants/projects'
 import type { Project } from '../../types/project'
 import { getProjectImages } from '../../utils/projects'
 import PageTitle from '../ui/PageTitle'
-import PageMeta from '../ui/PageMeta'
+import { usePageMeta } from '../../hooks/usePageMeta'
 import ProjectCard from './ProjectCard'
 import ProjectModal from './ProjectModal'
 import './ProjectsSection.css'
@@ -13,7 +13,8 @@ const HOVER_INTERVAL_MS = 2500
 
 const ProjectsSection = () => {
   const { t } = useLanguage()
-  const projects = useMemo(() => buildProjects(t), [t])
+  usePageMeta(t('meta.titleProjects'), t('meta.descProjects'))
+  const projects = buildProjects(t)
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [hoveredProjectId, setHoveredProjectId] = useState<number | null>(null)
   const [hoveredCardImageIndex, setHoveredCardImageIndex] = useState(0)
@@ -38,7 +39,7 @@ const ProjectsSection = () => {
     }
   }, [selectedProject])
 
-  const handleCardMouseEnter = useCallback((project: Project) => {
+  function handleCardMouseEnter(project: Project) {
     const imgs = getProjectImages(project)
     if (imgs.length === 0) return
     setHoveredProjectId(project.id)
@@ -47,25 +48,25 @@ const ProjectsSection = () => {
     hoverIntervalRef.current = setInterval(() => {
       setHoveredCardImageIndex((i) => (i >= imgs.length - 1 ? 0 : i + 1))
     }, HOVER_INTERVAL_MS)
-  }, [])
+  }
 
-  const handleCardMouseLeave = useCallback(() => {
+  function handleCardMouseLeave() {
     setHoveredProjectId(null)
     if (hoverIntervalRef.current) {
       clearInterval(hoverIntervalRef.current)
       hoverIntervalRef.current = null
     }
-  }, [])
+  }
 
-  const handleSelectProject = useCallback((p: Project) => {
+  function handleSelectProject(p: Project) {
     focusBeforeModalRef.current = document.activeElement as HTMLElement | null
     setSelectedProject(p)
-  }, [])
+  }
 
-  const handleCloseModal = useCallback(() => {
+  function handleCloseModal() {
     setSelectedProject(null)
     setTimeout(() => focusBeforeModalRef.current?.focus(), 0)
-  }, [])
+  }
 
   useEffect(() => {
     return () => {
@@ -75,9 +76,9 @@ const ProjectsSection = () => {
 
   return (
     <section className="projects" aria-labelledby="projects-heading">
-      <PageMeta title={t('meta.titleProjects')} description={t('meta.descProjects')} />
       <div className="projects-container">
         <PageTitle id="projects-heading">{t('projects.title')}</PageTitle>
+        <h2 className="projects-intro">{t('projects.description')}</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <ProjectCard

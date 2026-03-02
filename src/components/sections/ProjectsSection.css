@@ -8,6 +8,14 @@
   margin: 0 auto;
 }
 
+.projects-intro {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -34,6 +42,11 @@
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 28px var(--shadow);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .project-card-preview {
@@ -408,6 +421,13 @@
 .project-modal-carousel-polaroid-side:hover {
   transform: scale(1.05) !important;
   z-index: 3 !important;
+}
+
+.project-modal-carousel-arrow:focus-visible,
+.project-modal-carousel-polaroid:focus-visible,
+.project-modal-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .project-modal-carousel-polaroid-side img {

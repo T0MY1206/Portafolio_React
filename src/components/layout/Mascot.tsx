@@ -18,13 +18,13 @@ export default function Mascot() {
       className={`mascot${acting ? ' mascot-acting' : ''}`}
       style={{ left: `${position.x}%`, top: `${position.y}%` }}
       role="img"
-      aria-label="Mascota del portfolio"
+      aria-label={t('mascot.ariaLabel')}
     >
       <button
         type="button"
         className="mascot-close"
         onClick={handleClose}
-        aria-label="Ocultar mascota"
+        aria-label={t('mascot.hideLabel')}
       >
         ×
       </button>

@@ -1,6 +1,6 @@
 import { useLanguage } from '../../context/LanguageContext'
+import { usePageMeta } from '../../hooks/usePageMeta'
 import PageTitle from '../ui/PageTitle'
-import PageMeta from '../ui/PageMeta'
 import './AboutSection.css'
 
 const EDUCATION_ITEMS: { labelKey: string; src: string; title: string }[] = [
@@ -19,11 +19,11 @@ const EDUCATION_ITEMS: { labelKey: string; src: string; title: string }[] = [
 
 const AboutSection = () => {
   const { t } = useLanguage()
+  usePageMeta(t('meta.titleAbout'), t('meta.descAbout'))
   const basePath = import.meta.env.BASE_URL || '/'
 
   return (
     <section className="about" aria-labelledby="about-heading">
-      <PageMeta title={t('meta.titleAbout')} description={t('meta.descAbout')} />
       <div className="about-container">
         <PageTitle id="about-heading">{t('about.title')}</PageTitle>
         <div className="about-content">

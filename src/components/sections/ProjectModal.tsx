@@ -118,6 +118,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                         type="button"
                         className="project-modal-carousel-polaroid project-modal-carousel-polaroid-side"
                         onClick={() => setCarouselIndex(idx)}
+                        aria-label={getImageAlt(project.name, imageAltLabel, idx)}
                       >
                         <img
                           src={modalImages[idx]}
@@ -150,6 +151,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                         type="button"
                         className="project-modal-carousel-polaroid project-modal-carousel-polaroid-side"
                         onClick={() => setCarouselIndex(idx)}
+                        aria-label={getImageAlt(project.name, imageAltLabel, idx)}
                       >
                         <img
                           src={modalImages[idx]}

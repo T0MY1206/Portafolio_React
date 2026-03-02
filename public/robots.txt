@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://t0my1206.github.io/Portafolio_React/sitemap.xml

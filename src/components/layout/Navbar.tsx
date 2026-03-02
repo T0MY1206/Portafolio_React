@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo" onClick={closeMenu}>
+        <Link to="/" className="navbar-logo" onClick={closeMenu} aria-label={t('nav.home')}>
           TTO
         </Link>
         <button

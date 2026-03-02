@@ -23,23 +23,31 @@ Portfolio web moderno y responsive hecho con React, TypeScript y Vite. Incluye m
 ## 📁 Estructura del proyecto
 
 ```
-portfolio-react/
-├── public/
+Portafolio_React/
+├── public/              # Assets estáticos, sitemap.xml, robots.txt
 ├── src/
-│   ├── components/    # Layout, Navbar, Footer, Mascot
-│   ├── pages/        # Home, About, Experience, Skills, Projects, Contact
-│   ├── context/      # LanguageContext
-│   ├── hooks/        # useTheme
-│   ├── i18n/         # translations.json
-│   ├── data/         # profile.json
+│   ├── components/
+│   │   ├── layout/     # Layout, Navbar, Footer, Mascot
+│   │   ├── sections/   # HomeSection, AboutSection, ExperienceSection, etc.
+│   │   └── ui/         # Button, PageTitle
+│   ├── context/        # LanguageContext (i18n)
+│   ├── hooks/          # useTheme, usePageMeta, useContactForm, useMascotBehavior
+│   ├── constants/      # routes, projects, experience, mascot
+│   ├── utils/          # validation, projects, random, i18n
+│   ├── types/          # project.ts
+│   ├── data/           # profile.json, bocato-images.json
+│   ├── i18n/           # translations.json
 │   ├── App.tsx
 │   ├── main.tsx
 │   └── index.css
-├── .env.example      # Ejemplo de variables de entorno
-├── .github/workflows/ # Deploy a GitHub Pages
+├── scripts/            # list-bocato-images.cjs (prebuild)
+├── .env.example
+├── .github/workflows/   # Deploy a GitHub Pages
 ├── package.json
 └── vite.config.ts
 ```
+
+Documentación técnica (análisis, auditorías, simplificación): ver en la raíz los archivos `ANALISIS_*.md`, `AUDITORIA_*.md`, `SIMPLIFICACION.md` y `EVALUACION_RECLUTADOR.md`.
 
 ## 🛠️ Instalación
 

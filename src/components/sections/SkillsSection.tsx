@@ -1,6 +1,6 @@
 import { useLanguage } from '../../context/LanguageContext'
+import { usePageMeta } from '../../hooks/usePageMeta'
 import PageTitle from '../ui/PageTitle'
-import PageMeta from '../ui/PageMeta'
 import profileData from '../../data/profile.json'
 import './SkillsSection.css'
 
@@ -13,10 +13,10 @@ const SKILL_CATEGORIES = [
 
 const SkillsSection = () => {
   const { t } = useLanguage()
+  usePageMeta(t('meta.titleSkills'), t('meta.descSkills'))
 
   return (
     <section className="skills" aria-labelledby="skills-heading">
-      <PageMeta title={t('meta.titleSkills')} description={t('meta.descSkills')} />
       <div className="skills-container">
         <PageTitle id="skills-heading">{t('skills.title')}</PageTitle>
         <div className="skills-grid">

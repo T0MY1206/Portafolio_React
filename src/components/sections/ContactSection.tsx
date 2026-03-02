@@ -1,13 +1,14 @@
 import { useLanguage } from '../../context/LanguageContext'
 import { useContactForm } from '../../hooks/useContactForm'
+import { usePageMeta } from '../../hooks/usePageMeta'
 import profileData from '../../data/profile.json'
 import PageTitle from '../ui/PageTitle'
-import PageMeta from '../ui/PageMeta'
 import Button from '../ui/Button'
 import './ContactSection.css'
 
 const ContactSection = () => {
   const { t } = useLanguage()
+  usePageMeta(t('meta.titleContact'), t('meta.descContact'))
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
   const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
@@ -23,7 +24,6 @@ const ContactSection = () => {
 
   return (
     <section className="contact" aria-labelledby="contact-heading">
-      <PageMeta title={t('meta.titleContact')} description={t('meta.descContact')} />
       <div className="contact-container">
         <PageTitle id="contact-heading">{t('contact.title')}</PageTitle>
         <div className="contact-content">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 
+/** Provides current theme (light/dark), persisted in localStorage and synced to document. */
 export const useTheme = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     const saved = localStorage.getItem('theme')

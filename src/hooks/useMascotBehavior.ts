@@ -100,9 +100,7 @@ export function useMascotBehavior(
       MASCOT_SELECTORS.forEach((sel) => {
         try {
           container.querySelectorAll(sel).forEach((el) => candidates.push(el))
-        } catch {
-          // ignore invalid selector
-        }
+        } catch {}
       })
 
       if (candidates.length === 0) {

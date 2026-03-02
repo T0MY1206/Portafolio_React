@@ -183,7 +183,9 @@
       "projects": "So many projects!|This section is mine now!|I call dibs on the repos!",
       "contact": "Don't contact them, contact me!|Mail section: stolen!|I'll forward the messages... maybe.",
       "hideComment": "Gone! 😄|Hidden!|Out of sight!|Nobody will find it now!|Poof!",
-      "moveComment": "Moved it!|Relocated!|Somewhere else now!|Fresh spot!|Shifted!"
+      "moveComment": "Moved it!|Relocated!|Somewhere else now!|Fresh spot!|Shifted!",
+      "ariaLabel": "Portfolio mascot",
+      "hideLabel": "Hide mascot"
     }
   },
   "es": {
@@ -370,7 +372,9 @@
       "projects": "¡Cuántos proyectos!|¡Esta sección es mía!|¡Me adjudico los repos!",
       "contact": "¡No los contactes a ellos, a mí!|Sección contacto: robada.|Les reenvío los mensajes... tal vez.",
       "hideComment": "¡Listo, escondido! 😄|¡Escondido!|¡Fuera de vista!|¡Nadie lo encuentra ahora!|¡Puf!",
-      "moveComment": "¡Lo moví de lugar!|¡Reubicado!|¡Por otro lado ahora!|¡Nuevo lugar!|¡Desplazado!"
+      "moveComment": "¡Lo moví de lugar!|¡Reubicado!|¡Por otro lado ahora!|¡Nuevo lugar!|¡Desplazado!",
+      "ariaLabel": "Mascota del portafolio",
+      "hideLabel": "Ocultar mascota"
     }
   }
 }
