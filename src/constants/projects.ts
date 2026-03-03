@@ -1,5 +1,4 @@
 import type { Project, Technology } from '../types/project'
-import bocatoImageFilenames from '../data/bocato-images.json'
 
 const createTech = (
   id: number,
@@ -79,34 +78,208 @@ export const REPO_LINKS: Record<string, { labelKey: string; url: string }[]> = {
   ],
 }
 
-const BASE_URL = import.meta.env.BASE_URL || '/'
-const BOCATO_FIRST_IMAGE = 'c__Users_tomas_AppData_Roaming_Cursor_User_workspaceStorage_697e9fbe3ecaa62adccfad828f533f29_images_Captura_de_pantalla_2025-12-11_200726-aa4576fd-39ba-4fc5-a026-c67d507dc260.png'
+const BOCATO_IMAGES = Object.values(
+  import.meta.glob('../assets/bocato/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
 
-const bocatoUrls = (bocatoImageFilenames as string[]).map(
-  (name) => `${BASE_URL}assets/bocato/${encodeURIComponent(name)}`
-)
+const CONTADORES_IMAGES = Object.values(
+  import.meta.glob('../assets/contadores/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
 
-export function getBocatoImages(): string[] {
-  const firstUrl = `${BASE_URL}assets/bocato/${encodeURIComponent(BOCATO_FIRST_IMAGE)}`
-  const rest = bocatoUrls.filter((u) => u !== firstUrl)
-  return rest.length < bocatoUrls.length ? [firstUrl, ...rest] : bocatoUrls
-}
+const backendJavaUrls = Object.values(
+  import.meta.glob('../assets/backendJava/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const taskFlowApiUrls = Object.values(
+  import.meta.glob('../assets/taskFlowApi/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const pronafeUrls = Object.values(
+  import.meta.glob('../assets/pronafe/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const tarjetaCreditoUrls = Object.values(
+  import.meta.glob('../assets/tarjetaCredito/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const portfolioMobileUrls = Object.values(
+  import.meta.glob('../assets/portfolioMobile/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const urlShortenerUrls = Object.values(
+  import.meta.glob('../assets/urlShortener/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const windowsFormUrls = Object.values(
+  import.meta.glob('../assets/windowsForm/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const awInternetSalesUrls = Object.values(
+  import.meta.glob('../assets/awInternetSales/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const loginOauthUrls = Object.values(
+  import.meta.glob('../assets/loginOauth/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
 
 export function buildProjects(t: (key: string) => string): Project[] {
   const repo = (key: keyof typeof REPO_URLS) => REPO_URLS[key] ?? null
   const repoLinks = (key: keyof typeof REPO_LINKS) => REPO_LINKS[key]
-  const BOCATO_IMAGES = getBocatoImages()
   return [
-    { id: 1, name: t('projects.contadores.title'), description: t('projects.contadores.description'), imageUrl: null, repositoryUrl: repo('contadores'), liveUrl: null, technologies: [TECHS.python, TECHS.fastapi, TECHS.uvicorn, TECHS.openpyxl, TECHS.html, TECHS.js] },
-    { id: 2, name: t('projects.bocato.title'), description: t('projects.bocato.description'), imageUrl: null, images: BOCATO_IMAGES, repositoryUrl: repo('bocato'), liveUrl: null, technologies: [TECHS.angular, TECHS.ts, TECHS.bootstrap, TECHS.signals] },
-    { id: 3, name: t('projects.backendJava.title'), description: t('projects.backendJava.description'), imageUrl: null, repositoryUrl: repo('backendJava'), liveUrl: null, technologies: [TECHS.java, TECHS.springboot, TECHS.jpa, TECHS.mysql, TECHS.docker, TECHS.maven] },
-    { id: 4, name: t('projects.taskFlowApi.title'), description: t('projects.taskFlowApi.description'), imageUrl: null, repositoryUrl: repo('taskFlowApi'), liveUrl: null, technologies: [TECHS.java, TECHS.springboot, TECHS.postgresql, TECHS.jwt, TECHS.swagger, TECHS.testcontainers, TECHS.docker] },
-    { id: 5, name: t('projects.pronafe.title'), description: t('projects.pronafe.description'), imageUrl: null, repositoryUrl: repo('pronafe'), liveUrl: null, technologies: [TECHS.php, TECHS.laravel, TECHS.inertia, TECHS.react, TECHS.ts, TECHS.vite, TECHS.tailwind, TECHS.mysql, TECHS.docker] },
-    { id: 6, name: t('projects.tarjetaCredito.title'), description: t('projects.tarjetaCredito.description'), imageUrl: null, repositoryUrl: null, repositoryLinks: repoLinks('tarjetaCredito'), liveUrl: null, technologies: [TECHS.angular, TECHS.ts, TECHS.bootstrap, TECHS.rxjs, TECHS.dotnet, TECHS.aspnet, TECHS.ef, TECHS.sqlserver, TECHS.swagger] },
-    { id: 7, name: t('projects.portfolioMobile.title'), description: t('projects.portfolioMobile.description'), imageUrl: null, repositoryUrl: repo('portfolioMobile'), liveUrl: null, technologies: [TECHS.reactnative, TECHS.expo, TECHS.js, TECHS.asyncstorage, TECHS.contextapi] },
-    { id: 8, name: t('projects.urlShortener.title'), description: t('projects.urlShortener.description'), imageUrl: null, repositoryUrl: repo('urlShortener'), liveUrl: null, technologies: [TECHS.csharp, TECHS.dotnet, TECHS.aspnet, TECHS.openapi] },
-    { id: 9, name: t('projects.windowsForm.title'), description: t('projects.windowsForm.description'), imageUrl: null, repositoryUrl: repo('windowsForm'), liveUrl: null, technologies: [TECHS.csharp, TECHS.dotnetfw, TECHS.winforms, TECHS.sqlserver, TECHS.adonet] },
-    { id: 10, name: t('projects.awInternetSales.title'), description: t('projects.awInternetSales.description'), imageUrl: null, repositoryUrl: repo('awInternetSales'), liveUrl: null, technologies: [TECHS.ssas] },
-    { id: 11, name: t('projects.loginOauth.title'), description: t('projects.loginOauth.description'), imageUrl: null, repositoryUrl: repo('loginOauth'), liveUrl: null, technologies: [TECHS.node, TECHS.express] },
+    {
+      id: 1,
+      name: t('projects.contadores.title'),
+      description: t('projects.contadores.description'),
+      imageUrl: null,
+      images: CONTADORES_IMAGES,
+      repositoryUrl: repo('contadores'),
+      liveUrl: null,
+      technologies: [TECHS.python, TECHS.fastapi, TECHS.uvicorn, TECHS.openpyxl, TECHS.html, TECHS.js],
+    },
+    {
+      id: 2,
+      name: t('projects.bocato.title'),
+      description: t('projects.bocato.description'),
+      imageUrl: null,
+      images: BOCATO_IMAGES,
+      repositoryUrl: repo('bocato'),
+      liveUrl: null,
+      technologies: [TECHS.angular, TECHS.ts, TECHS.bootstrap, TECHS.signals],
+    },
+    {
+      id: 3,
+      name: t('projects.backendJava.title'),
+      description: t('projects.backendJava.description'),
+      imageUrl: null,
+      images: backendJavaUrls,
+      repositoryUrl: repo('backendJava'),
+      liveUrl: null,
+      technologies: [TECHS.java, TECHS.springboot, TECHS.jpa, TECHS.mysql, TECHS.docker, TECHS.maven],
+    },
+    {
+      id: 4,
+      name: t('projects.taskFlowApi.title'),
+      description: t('projects.taskFlowApi.description'),
+      imageUrl: null,
+      images: taskFlowApiUrls,
+      repositoryUrl: repo('taskFlowApi'),
+      liveUrl: null,
+      technologies: [TECHS.java, TECHS.springboot, TECHS.postgresql, TECHS.jwt, TECHS.swagger, TECHS.testcontainers, TECHS.docker],
+    },
+    {
+      id: 5,
+      name: t('projects.pronafe.title'),
+      description: t('projects.pronafe.description'),
+      imageUrl: null,
+      images: pronafeUrls,
+      repositoryUrl: repo('pronafe'),
+      liveUrl: null,
+      technologies: [TECHS.php, TECHS.laravel, TECHS.inertia, TECHS.react, TECHS.ts, TECHS.vite, TECHS.tailwind, TECHS.mysql, TECHS.docker],
+    },
+    {
+      id: 6,
+      name: t('projects.tarjetaCredito.title'),
+      description: t('projects.tarjetaCredito.description'),
+      imageUrl: null,
+      images: tarjetaCreditoUrls,
+      repositoryUrl: null,
+      repositoryLinks: repoLinks('tarjetaCredito'),
+      liveUrl: null,
+      technologies: [TECHS.angular, TECHS.ts, TECHS.bootstrap, TECHS.rxjs, TECHS.dotnet, TECHS.aspnet, TECHS.ef, TECHS.sqlserver, TECHS.swagger],
+    },
+    {
+      id: 7,
+      name: t('projects.portfolioMobile.title'),
+      description: t('projects.portfolioMobile.description'),
+      imageUrl: null,
+      images: portfolioMobileUrls,
+      repositoryUrl: repo('portfolioMobile'),
+      liveUrl: null,
+      technologies: [TECHS.reactnative, TECHS.expo, TECHS.js, TECHS.asyncstorage, TECHS.contextapi],
+    },
+    {
+      id: 8,
+      name: t('projects.urlShortener.title'),
+      description: t('projects.urlShortener.description'),
+      imageUrl: null,
+      images: urlShortenerUrls,
+      repositoryUrl: repo('urlShortener'),
+      liveUrl: null,
+      technologies: [TECHS.csharp, TECHS.dotnet, TECHS.aspnet, TECHS.openapi],
+    },
+    {
+      id: 9,
+      name: t('projects.windowsForm.title'),
+      description: t('projects.windowsForm.description'),
+      imageUrl: null,
+      images: windowsFormUrls,
+      repositoryUrl: repo('windowsForm'),
+      liveUrl: null,
+      technologies: [TECHS.csharp, TECHS.dotnetfw, TECHS.winforms, TECHS.sqlserver, TECHS.adonet],
+    },
+    {
+      id: 10,
+      name: t('projects.awInternetSales.title'),
+      description: t('projects.awInternetSales.description'),
+      imageUrl: null,
+      images: awInternetSalesUrls,
+      repositoryUrl: repo('awInternetSales'),
+      liveUrl: null,
+      technologies: [TECHS.ssas],
+    },
+    {
+      id: 11,
+      name: t('projects.loginOauth.title'),
+      description: t('projects.loginOauth.description'),
+      imageUrl: null,
+      images: loginOauthUrls,
+      repositoryUrl: repo('loginOauth'),
+      liveUrl: null,
+      technologies: [TECHS.node, TECHS.express],
+    },
   ]
 }
