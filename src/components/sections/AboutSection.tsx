@@ -17,6 +17,10 @@ const EDUCATION_ITEMS: { labelKey: string; src: string; title: string }[] = [
   { labelKey: 'about.education.item11', src: 'certificates/git-github-todocode.pdf', title: 'Certificado Git y GitHub TodoCode' },
   { labelKey: 'about.education.item12', src: 'certificates/ciberseguridad-entorno-educativo.pdf', title: 'Certificado Ciberseguridad en el Entorno Educativo' },
   { labelKey: 'about.education.item13', src: 'certificates/google-hacking-dorks.pdf', title: 'Certificado Google Hacking Dorks' },
+  { labelKey: 'about.education.item14', src: 'certificates/Certificado - Curso de Introducción a DevOps_ Bases y Conceptos.pdf', title: 'Certificado Introducción a DevOps: Bases y Conceptos' },
+  { labelKey: 'about.education.item15', src: 'certificates/Certificado - Taller de Deploy de Aplicaciones con Laravel.pdf', title: 'Certificado Taller de Deploy con Laravel' },
+  { labelKey: 'about.education.item16', src: 'certificates/Certificado - Minicurso práctico de Flexbox y Grid.pdf', title: 'Certificado Minicurso Flexbox y Grid' },
+  { labelKey: 'about.education.item17', src: 'certificates/Certificado - Curso de Bases y conceptos de la Ciencia de Datos.pdf', title: 'Certificado Bases y conceptos de la Ciencia de Datos' },
 ]
 
 const AboutSection = () => {

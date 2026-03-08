@@ -36,7 +36,11 @@
         "item10": "HTML and CSS from Scratch — TodoCode — Status: Completed.",
         "item11": "Introduction to Git and GitHub — TodoCode — Status: Completed.",
         "item12": "Cybersecurity in the Educational Environment — Fundación Telefónica Movistar — Status: Completed.",
-        "item13": "Google Hacking Course // Dorks Commands for Hacking — Udemy — Status: Completed."
+        "item13": "Google Hacking Course // Dorks Commands for Hacking — Udemy — Status: Completed.",
+        "item14": "Introduction to DevOps: Bases and Concepts — Status: Completed.",
+        "item15": "Workshop: Deploying Applications with Laravel — Status: Completed.",
+        "item16": "Practical Minicourse: Flexbox and Grid — Status: Completed.",
+        "item17": "Bases and Concepts of Data Science — Status: Completed."
       },
       "languages": {
         "title": "Languages",
@@ -227,7 +231,11 @@
         "item10": "Título: HTML y CSS desde CERO. Institución: TodoCode. Estado: Finalizado.",
         "item11": "Título: Introducción a Git y GitHub. Institución: TodoCode. Estado: Finalizado.",
         "item12": "Título: Ciberseguridad en el Entorno Educativo. Institución: Fundación Telefónica Movistar. Estado: Finalizado.",
-        "item13": "Título: Curso de Google Hacking || Dorks Comandos para Hackear. Institución: Udemy. Estado: Finalizado."
+        "item13": "Título: Curso de Google Hacking || Dorks Comandos para Hackear. Institución: Udemy. Estado: Finalizado.",
+        "item14": "Título: Curso de Introducción a DevOps: Bases y Conceptos. Estado: Finalizado.",
+        "item15": "Título: Taller de Deploy de Aplicaciones con Laravel. Estado: Finalizado.",
+        "item16": "Título: Minicurso práctico de Flexbox y Grid. Estado: Finalizado.",
+        "item17": "Título: Curso de Bases y conceptos de la Ciencia de Datos. Estado: Finalizado."
       },
       "languages": {
         "title": "Idiomas",
