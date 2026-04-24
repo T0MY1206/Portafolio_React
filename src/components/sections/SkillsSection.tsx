@@ -19,7 +19,7 @@ const CUSTOM_SKILL_ICONS: Record<string, React.ComponentType<{ className?: strin
 
 function SkillItem({ name }: { name: string }) {
   const meta = getSkillMeta(name)
-  const { color, devicon, customKey } = meta
+  const { color, devicon, customKey, labelIcon } = meta
   const isLight = isLightColor(color)
   const CustomIcon = customKey ? CUSTOM_SKILL_ICONS[customKey] : null
   return (
@@ -27,10 +27,13 @@ function SkillItem({ name }: { name: string }) {
       className="skill-item"
       style={{ backgroundColor: color }}
       data-light={isLight || undefined}
+      data-skill={name}
     >
       <span className="skill-item-icon-wrap">
         {CustomIcon ? (
           <CustomIcon className="skill-item-icon skill-item-icon-svg" />
+        ) : labelIcon ? (
+          <span className="skill-item-icon-badge" aria-hidden>{labelIcon}</span>
         ) : (
           <i className={`devicon ${devicon ?? 'devicon-devicon-plain'} skill-item-icon`} aria-hidden />
         )}
@@ -58,8 +61,14 @@ const SkillsSection = () => {
       <div className="skills-container">
         <PageTitle id="skills-heading">{t('skills.title')}</PageTitle>
         <div className="skills-grid">
-          {SKILL_CATEGORIES.map(({ key, skills }) => (
-            <section key={key} className="skills-category" aria-labelledby={`skills-${key.replace('.', '-')}`}>
+          {SKILL_CATEGORIES.map(({ key, skills }) => {
+            const categoryName = key.split('.').pop() ?? 'general'
+            return (
+            <section
+              key={key}
+              className={`skills-category skills-category-${categoryName}`}
+              aria-labelledby={`skills-${key.replace('.', '-')}`}
+            >
               <h2 id={`skills-${key.replace('.', '-')}`}>{t(key)}</h2>
               <div className="skills-list">
                 {skills.map((skill) => (
@@ -67,7 +76,8 @@ const SkillsSection = () => {
                 ))}
               </div>
             </section>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

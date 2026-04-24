@@ -6,12 +6,39 @@ import './Mascot.css'
 export default function Mascot() {
   const { t } = useLanguage()
   const location = useLocation()
-  const { position, comment, acting, visible, handleClose } = useMascotBehavior(
+  const {
+    position,
+    comment,
+    acting,
+    visible,
+    mode,
+    frequency,
+    settingsOpen,
+    prefersReducedMotion,
+    effectiveMode,
+    setMode,
+    setFrequency,
+    setSettingsOpen,
+    handleClose,
+    handleRestore,
+  } = useMascotBehavior(
     location.pathname,
     t
   )
 
-  if (!visible) return null
+  if (!visible) {
+    return (
+      <button
+        type="button"
+        className="mascot-reopen"
+        onClick={handleRestore}
+        aria-label={t('mascot.restoreLabel')}
+        data-testid="mascot-reopen"
+      >
+        {t('mascot.reopen')}
+      </button>
+    )
+  }
 
   return (
     <div
@@ -22,12 +49,60 @@ export default function Mascot() {
     >
       <button
         type="button"
+        className="mascot-settings-toggle"
+        onClick={() => setSettingsOpen((prev) => !prev)}
+        aria-expanded={settingsOpen}
+        aria-controls="mascot-settings"
+        aria-label={t('mascot.settingsLabel')}
+        data-testid="mascot-settings-toggle"
+      >
+        ⚙
+      </button>
+      <button
+        type="button"
         className="mascot-close"
         onClick={handleClose}
         aria-label={t('mascot.hideLabel')}
+        data-testid="mascot-close"
       >
         ×
       </button>
+      {settingsOpen && (
+        <div className="mascot-settings" id="mascot-settings" data-testid="mascot-settings">
+          <p className="mascot-settings-title">{t('mascot.settingsTitle')}</p>
+          <label>
+            {t('mascot.modeLabel')}
+            <select
+              value={mode}
+              onChange={(event) => setMode(event.target.value as typeof mode)}
+            >
+              <option value="interactive">{t('mascot.modeInteractive')}</option>
+              <option value="assistant">{t('mascot.modeAssistant')}</option>
+              <option value="reduced">{t('mascot.modeReduced')}</option>
+            </select>
+          </label>
+          <label>
+            {t('mascot.frequencyLabel')}
+            <select
+              value={frequency}
+              onChange={(event) => setFrequency(event.target.value as typeof frequency)}
+            >
+              <option value="normal">{t('mascot.frequencyNormal')}</option>
+              <option value="low">{t('mascot.frequencyLow')}</option>
+            </select>
+          </label>
+          {prefersReducedMotion && (
+            <p className="mascot-settings-note">
+              {t('mascot.reducedMotionHint')}
+            </p>
+          )}
+          <p className="mascot-settings-note">
+            {effectiveMode === 'assistant'
+              ? t('mascot.assistantModeHint')
+              : t('mascot.interactiveModeHint')}
+          </p>
+        </div>
+      )}
       {comment && (
         <div className="mascot-bubble">
           <span>{comment}</span>

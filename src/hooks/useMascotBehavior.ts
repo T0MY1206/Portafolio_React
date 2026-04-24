@@ -5,12 +5,18 @@ import {
   PATH_TO_SECTION,
   MASCOT_SELECTORS,
   MASCOT_ACTIONS,
-  MIN_ACTION_DELAY_MS,
-  MAX_ACTION_DELAY_MS,
   MOVE_DURATION_MS,
   RESTORE_AFTER_MS,
   COMMENT_DURATION_MS,
+  MASCOT_STORAGE_KEYS,
 } from '../constants/mascot'
+import {
+  getDelayRangeByFrequency,
+  normalizeMascotFrequency,
+  normalizeMascotMode,
+  type MascotFrequency,
+  type MascotMode,
+} from '../utils/mascotSettings'
 
 export function useMascotBehavior(
   pathname: string,
@@ -23,7 +29,17 @@ export function useMascotBehavior(
     y: 10 + Math.random() * 75,
   }))
   const [comment, setComment] = useState<string | null>(null)
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(() => localStorage.getItem(MASCOT_STORAGE_KEYS.visible) !== 'false')
+  const [mode, setMode] = useState<MascotMode>(() =>
+    normalizeMascotMode(localStorage.getItem(MASCOT_STORAGE_KEYS.mode))
+  )
+  const [frequency, setFrequency] = useState<MascotFrequency>(() =>
+    normalizeMascotFrequency(localStorage.getItem(MASCOT_STORAGE_KEYS.frequency))
+  )
+  const [settingsOpen, setSettingsOpen] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
   const [acting, setActing] = useState(false)
 
   const affectedRef = useRef<{ el: Element; action: string } | null>(null)
@@ -57,10 +73,34 @@ export function useMascotBehavior(
     setActing(false)
   }, [])
 
+  const effectiveMode: MascotMode =
+    prefersReducedMotion && mode === 'interactive' ? 'reduced' : mode
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const onChange = (event: MediaQueryListEvent) => setPrefersReducedMotion(event.matches)
+    mediaQuery.addEventListener('change', onChange)
+    return () => mediaQuery.removeEventListener('change', onChange)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(MASCOT_STORAGE_KEYS.visible, String(visible))
+  }, [visible])
+
+  useEffect(() => {
+    localStorage.setItem(MASCOT_STORAGE_KEYS.mode, mode)
+  }, [mode])
+
+  useEffect(() => {
+    localStorage.setItem(MASCOT_STORAGE_KEYS.frequency, frequency)
+  }, [frequency])
+
   useEffect(() => {
     if (!visible) return
 
-    const key = `mascot.${section}`
+    const key = effectiveMode === 'assistant'
+      ? `mascot.assistant.${section}`
+      : `mascot.${section}`
     const raw = t(key)
     if (raw === key) return
     const list = getTranslationVariants(t, key)
@@ -69,7 +109,23 @@ export function useMascotBehavior(
     setComment(msg)
     const hide = setTimeout(() => setComment(null), COMMENT_DURATION_MS)
     return () => clearTimeout(hide)
-  }, [section, position.x, position.y, visible, t])
+  }, [section, visible, t, effectiveMode])
+
+  useEffect(() => {
+    if (!visible || effectiveMode !== 'assistant') return
+
+    const interval = window.setInterval(() => {
+      const list = getTranslationVariants(t, `mascot.assistant.${section}`)
+      if (!list.length) return
+      setComment(pickRandom(list))
+      if (commentClearRef.current) clearTimeout(commentClearRef.current)
+      commentClearRef.current = setTimeout(() => setComment(null), COMMENT_DURATION_MS)
+    }, 14000)
+
+    return () => {
+      window.clearInterval(interval)
+    }
+  }, [effectiveMode, section, t, visible])
 
   useEffect(() => {
     restoreAffected()
@@ -79,7 +135,7 @@ export function useMascotBehavior(
     if (commentClearRef.current) clearTimeout(commentClearRef.current)
     actionTimerRef.current = restoreTimerRef.current = moveToTargetTimerRef.current = commentClearRef.current = null
 
-    if (!visible) {
+    if (!visible || effectiveMode !== 'interactive') {
       return () => {
         if (actionTimerRef.current) clearTimeout(actionTimerRef.current)
         if (restoreTimerRef.current) clearTimeout(restoreTimerRef.current)
@@ -88,6 +144,8 @@ export function useMascotBehavior(
         restoreAffected()
       }
     }
+
+    const delayRange = getDelayRangeByFrequency(frequency)
 
     function runNextAction() {
       const container = document.querySelector('.main-content-inner')
@@ -100,7 +158,9 @@ export function useMascotBehavior(
       MASCOT_SELECTORS.forEach((sel) => {
         try {
           container.querySelectorAll(sel).forEach((el) => candidates.push(el))
-        } catch {}
+        } catch {
+          // Ignore invalid selectors from custom mascot config.
+        }
       })
 
       if (candidates.length === 0) {
@@ -146,8 +206,8 @@ export function useMascotBehavior(
 
     function scheduleNext() {
       const delay =
-        MIN_ACTION_DELAY_MS +
-        Math.random() * (MAX_ACTION_DELAY_MS - MIN_ACTION_DELAY_MS)
+        delayRange.min +
+        Math.random() * (delayRange.max - delayRange.min)
       actionTimerRef.current = setTimeout(runNextAction, delay)
     }
 
@@ -160,10 +220,11 @@ export function useMascotBehavior(
       if (commentClearRef.current) clearTimeout(commentClearRef.current)
       restoreAffected()
     }
-  }, [section, positionNearElement, restoreAffected, t, visible])
+  }, [section, positionNearElement, restoreAffected, t, visible, effectiveMode, frequency])
 
   const handleClose = useCallback(() => {
     setVisible(false)
+    setSettingsOpen(false)
     setComment(null)
     setActing(false)
     if (actionTimerRef.current) clearTimeout(actionTimerRef.current)
@@ -173,11 +234,25 @@ export function useMascotBehavior(
     restoreAffected()
   }, [restoreAffected])
 
+  const handleRestore = useCallback(() => {
+    setVisible(true)
+    setComment(null)
+  }, [])
+
   return {
     position,
     comment,
     acting,
     visible,
+    mode,
+    frequency,
+    settingsOpen,
+    prefersReducedMotion,
+    effectiveMode,
+    setMode,
+    setFrequency,
+    setSettingsOpen,
+    handleRestore,
     handleClose,
   }
 }

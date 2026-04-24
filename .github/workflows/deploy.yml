@@ -23,11 +23,34 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Quality gates
+        env:
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_MASCOT_ENABLED: ${{ vars.VITE_MASCOT_ENABLED }}
+          VITE_DEFAULT_THEME: ${{ vars.VITE_DEFAULT_THEME }}
+          VITE_BASE_PATH: /Portafolio_React/
+        run: npm run check
+
+      - name: Frontend E2E
+        env:
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_MASCOT_ENABLED: ${{ vars.VITE_MASCOT_ENABLED }}
+          VITE_DEFAULT_THEME: ${{ vars.VITE_DEFAULT_THEME }}
+          VITE_BASE_PATH: /Portafolio_React/
+        run: npm run test:e2e
 
       - name: Build
         env:
@@ -36,7 +59,8 @@ jobs:
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_MASCOT_ENABLED: ${{ vars.VITE_MASCOT_ENABLED }}
           VITE_DEFAULT_THEME: ${{ vars.VITE_DEFAULT_THEME }}
-        run: npm run build -- --base=/Portafolio_React/
+          VITE_BASE_PATH: /Portafolio_React/
+        run: npm run build
 
       - name: Copy 404 fallback for SPA
         run: cp dist/index.html dist/404.html

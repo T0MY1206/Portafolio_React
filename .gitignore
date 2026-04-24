@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
+coverage
+playwright-report
+test-results
 
 # Environment variables (EmailJS keys, etc.)
 .env

@@ -8,6 +8,7 @@ const ExperienceSection = lazy(() => import('./components/sections/ExperienceSec
 const SkillsSection = lazy(() => import('./components/sections/SkillsSection'))
 const ProjectsSection = lazy(() => import('./components/sections/ProjectsSection'))
 const ContactSection = lazy(() => import('./components/sections/ContactSection'))
+const NotFoundSection = lazy(() => import('./components/sections/NotFoundSection'))
 
 function SectionFallback() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/skills" element={<SkillsSection />} />
           <Route path="/projects" element={<ProjectsSection />} />
           <Route path="/contact" element={<ContactSection />} />
+          <Route path="*" element={<NotFoundSection />} />
         </Routes>
       </Suspense>
     </Layout>

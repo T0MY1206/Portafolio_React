@@ -4,11 +4,14 @@ Portfolio web moderno y responsive hecho con React, TypeScript y Vite. Incluye m
 
 ## 🚀 Tech Stack
 
-- **React 18** – UI
+- **React 19** – UI
 - **TypeScript** – Tipado
-- **Vite** – Build y dev server
+- **Vite 8** – Build y dev server
 - **React Router** – Navegación
 - **EmailJS** – Envío de mensajes del formulario de contacto
+- **Vitest + Testing Library** – Pruebas unitarias/integración
+- **Playwright** – Pruebas E2E de frontend
+- **ESLint** – Calidad estática
 
 ## ✨ Features
 
@@ -83,6 +86,24 @@ Documentación técnica (análisis, auditorías, simplificación): ver en la ra�
    npm run preview
    ```
 
+## ✅ Calidad y pruebas
+
+Scripts disponibles:
+
+```bash
+npm run lint          # Reglas ESLint
+npm run test          # Vitest (unit/integration)
+npm run test:coverage # Cobertura
+npm run test:e2e      # Playwright E2E
+npm run check         # lint + test + build
+```
+
+Si es la primera vez con Playwright:
+
+```bash
+npx playwright install chromium
+```
+
 ---
 
 ## ⚙️ Configuración
@@ -98,6 +119,7 @@ En la raíz del proyecto existe `.env.example`. Copialo a `.env` y completá los
 | `VITE_EMAILJS_TEMPLATE_ID` | Sí (para contacto) | ID de la plantilla de email |
 | `VITE_MASCOT_ENABLED` | No | `true` o `false` – mostrar u ocultar la mascota (por defecto: visible) |
 | `VITE_DEFAULT_THEME` | No | `light` o `dark` – tema por defecto si el usuario no tiene preferencia guardada |
+| `VITE_BASE_PATH` | No | Base path para deploy estático (default: `/Portafolio_React/`) |
 
 Cualquier variable que empiece con `VITE_` se lee en el código con `import.meta.env.VITE_NOMBRE`.
 

@@ -8,10 +8,36 @@
   },
   "summary": "Software Developer with 4 years of experience in frontend, backend, software architecture and technical leadership. Strong background in building scalable web and business systems.",
   "skills": {
-    "frontend": ["HTML", "CSS", "JavaScript"],
-    "backend": ["C#", ".NET", "Node.js", "Python", "Java", "Spring Boot"],
-    "databases": ["SQL Server", "PostgreSQL"],
-    "tools": ["GitHub", "Jira", "Postman", "REST APIs"]
+    "frontend": ["Angular", "CSS", "HTML", "JavaScript", "React", "React Native", "Tailwind CSS", "TypeScript", "Windows Forms"],
+    "backend": [".NET", "Express", "Java", "JWT", "Laravel", "Nest.js", "Next.js", "Node.js", "Python", "Spring Boot"],
+    "databases": ["Access", "Firebase", "MongoDB", "MySQL", "PostgreSQL", "SQL Server", "SQLite"],
+    "tools": [
+      "Bruno",
+      "ChatGPT",
+      "Claude Code",
+      "Cursor",
+      "Docker",
+      "Figma",
+      "Gamma",
+      "Gemini",
+      "Git",
+      "GitHub",
+      "GitHub Actions",
+      "GitHub Copilot",
+      "Jenkins",
+      "Jira",
+      "Linux",
+      "Netlify",
+      "Nginx",
+      "PostgreSQL pgAdmin",
+      "Postman",
+      "Render",
+      "REST APIs",
+      "Supabase",
+      "Swagger/OpenAPI",
+      "UiPath",
+      "Vercel"
+    ]
   },
   "experience": [
     {

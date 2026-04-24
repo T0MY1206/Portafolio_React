@@ -11,7 +11,15 @@
     <meta name="description" content="Tomas Tutor Onetto - Software Developer & Technical Leader Portfolio. Full Stack Developer based in Buenos Aires, Argentina." />
     <meta name="keywords" content="Software Developer, Full Stack, React, TypeScript, Portfolio" />
     <meta name="author" content="Tomas Tutor Onetto" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    </noscript>
     <title>Tomas Tutor Onetto - Software Developer Portfolio</title>
     <link rel="canonical" href="https://t0my1206.github.io/Portafolio_React/" />
     <!-- Open Graph -->
@@ -19,12 +27,28 @@
     <meta property="og:url" content="https://t0my1206.github.io/Portafolio_React/" />
     <meta property="og:title" content="Tomas Tutor Onetto - Software Developer Portfolio" />
     <meta property="og:description" content="Full Stack Developer & Technical Leader. Portfolio and projects. Buenos Aires, Argentina." />
+    <meta property="og:image" content="https://t0my1206.github.io/Portafolio_React/og-image.svg" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="es_ES" />
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tomas Tutor Onetto - Software Developer Portfolio" />
     <meta name="twitter:description" content="Full Stack Developer & Technical Leader. Portfolio and projects. Buenos Aires, Argentina." />
+    <meta name="twitter:image" content="https://t0my1206.github.io/Portafolio_React/og-image.svg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tomas Tutor Onetto",
+        "url": "https://t0my1206.github.io/Portafolio_React/",
+        "jobTitle": "Software Developer & Technical Leader",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Buenos Aires",
+          "addressCountry": "AR"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

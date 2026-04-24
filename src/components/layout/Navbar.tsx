@@ -40,6 +40,7 @@ const Navbar = () => {
                     to={path}
                     className={isActive(path) ? 'active' : ''}
                     onClick={closeMenu}
+                    aria-current={isActive(path) ? 'page' : undefined}
                   >
                     {t(key)}
                   </Link>

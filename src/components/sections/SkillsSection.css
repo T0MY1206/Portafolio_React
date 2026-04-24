@@ -1,5 +1,5 @@
 .skills {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem 4rem;
   min-height: calc(100vh - 80px);
 }
 
@@ -10,8 +10,9 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
   gap: 2rem;
+  align-items: start;
 }
 
 .skills-category {
@@ -35,21 +36,22 @@
 }
 
 .skills-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.8rem;
-  justify-content: center;
 }
 
 .skill-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: flex-start;
+  gap: 0.55rem;
   color: #fff;
-  padding: 0.75rem 1rem;
+  min-height: 3rem;
+  padding: 0.65rem 0.8rem;
   border-radius: 12px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -85,23 +87,74 @@
   color: #fff;
 }
 
+.skill-item-icon-badge {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  color: #fff;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .skill-item[data-light] .skill-item-icon-svg {
   color: #1a1a1a !important;
 }
 
+.skill-item[data-light] .skill-item-icon-badge {
+  color: #1a1a1a;
+  border-color: rgba(26, 26, 26, 0.3);
+  background: rgba(26, 26, 26, 0.1);
+}
+
 .skill-item-label {
-  text-align: center;
+  text-align: left;
   line-height: 1.2;
+  word-break: break-word;
+}
+
+.skill-item[data-skill="Jenkins"] .skill-item-icon-wrap {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.skill-item[data-skill="Jenkins"] .skill-item-icon {
+  color: #1f2937 !important;
+}
+
+.skills-category-tools {
+  grid-column: 1 / -1;
+}
+
+.skills-category-tools .skills-list {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
   .skills {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem 2rem;
   }
 
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .skills-category-tools {
+    grid-column: auto;
   }
 
   .skills-category {

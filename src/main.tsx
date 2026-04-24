@@ -4,10 +4,13 @@ import { BrowserRouter } from 'react-router-dom'
 import { LanguageProvider } from './context/LanguageContext'
 import './index.css'
 import App from './App.tsx'
+import { getRouterBasename } from './utils/routerBase'
+
+const routerBasename = getRouterBasename(import.meta.env.BASE_URL)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/Portafolio_React">
+    <BrowserRouter basename={routerBasename}>
       <LanguageProvider>
         <App />
       </LanguageProvider>

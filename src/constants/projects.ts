@@ -56,6 +56,15 @@ export const TECHS: Record<string, Technology> = {
   openapi: createTech(41, 'OpenAPI/Scalar', 'TOOL'),
   signals: createTech(42, 'Angular Signals', 'FRONTEND'),
   maven: createTech(43, 'Maven', 'TOOL'),
+  camunda: createTech(44, 'Camunda 7', 'BACKEND'),
+  springcloud: createTech(45, 'Spring Cloud', 'BACKEND'),
+  eureka: createTech(46, 'Eureka', 'TOOL'),
+  prometheus: createTech(47, 'Prometheus', 'TOOL'),
+  zipkin: createTech(48, 'Zipkin', 'TOOL'),
+  kafka: createTech(49, 'Kafka', 'TOOL'),
+  zookeeper: createTech(50, 'Zookeeper', 'TOOL'),
+  gateway: createTech(51, 'API Gateway', 'BACKEND'),
+  csv: createTech(52, 'CSV Persistence', 'DATABASE'),
 }
 
 export const REPO_URLS: Record<string, string | null> = {
@@ -69,6 +78,10 @@ export const REPO_URLS: Record<string, string | null> = {
   windowsForm: 'https://github.com/T0MY1206/Proyecto-Windows-Form',
   awInternetSales: 'https://github.com/T0MY1206/Proyecto_Analysis-Service',
   loginOauth: 'https://github.com/T0MY1206/Login-con-Google',
+  camundaBackend: 'https://github.com/T0MY1206/camunda-backend',
+  microservicesObservability: 'https://github.com/T0MY1206/springboot-microservices-observability',
+  talentoTechBackendJava: 'https://github.com/T0MY1206/Talento-Tech-Curso-Backend-Java',
+  proyectoKafka: 'https://github.com/T0MY1206/Proyecto-Kafka',
 }
 
 export const REPO_LINKS: Record<string, { labelKey: string; url: string }[]> = {
@@ -166,6 +179,38 @@ const loginOauthUrls = Object.values(
   })
 ) as string[]
 
+const camundaBackendUrls = Object.values(
+  import.meta.glob('../assets/camundaBackend/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const microservicesObservabilityUrls = Object.values(
+  import.meta.glob('../assets/microservicesObservability/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const talentoTechBackendJavaUrls = Object.values(
+  import.meta.glob('../assets/talentoTechBackendJava/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
+const proyectoKafkaUrls = Object.values(
+  import.meta.glob('../assets/proyectoKafka/*.{png,jpg,jpeg,webp,avif}', {
+    eager: true,
+    query: '?url',
+    import: 'default',
+  })
+) as string[]
+
 export function buildProjects(t: (key: string) => string): Project[] {
   const repo = (key: keyof typeof REPO_URLS) => REPO_URLS[key] ?? null
   const repoLinks = (key: keyof typeof REPO_LINKS) => REPO_LINKS[key]
@@ -192,6 +237,36 @@ export function buildProjects(t: (key: string) => string): Project[] {
     },
     {
       id: 3,
+      name: t('projects.camundaBackend.title'),
+      description: t('projects.camundaBackend.description'),
+      imageUrl: null,
+      images: camundaBackendUrls,
+      repositoryUrl: repo('camundaBackend'),
+      liveUrl: null,
+      technologies: [TECHS.java, TECHS.springboot, TECHS.camunda, TECHS.postgresql, TECHS.openapi, TECHS.swagger, TECHS.docker, TECHS.maven],
+    },
+    {
+      id: 4,
+      name: t('projects.microservicesObservability.title'),
+      description: t('projects.microservicesObservability.description'),
+      imageUrl: null,
+      images: microservicesObservabilityUrls,
+      repositoryUrl: repo('microservicesObservability'),
+      liveUrl: null,
+      technologies: [TECHS.java, TECHS.springboot, TECHS.springcloud, TECHS.eureka, TECHS.gateway, TECHS.jwt, TECHS.postgresql, TECHS.prometheus, TECHS.zipkin, TECHS.maven, TECHS.docker],
+    },
+    {
+      id: 5,
+      name: t('projects.proyectoKafka.title'),
+      description: t('projects.proyectoKafka.description'),
+      imageUrl: null,
+      images: proyectoKafkaUrls,
+      repositoryUrl: repo('proyectoKafka'),
+      liveUrl: null,
+      technologies: [TECHS.java, TECHS.springboot, TECHS.kafka, TECHS.zookeeper, TECHS.docker, TECHS.maven],
+    },
+    {
+      id: 6,
       name: t('projects.backendJava.title'),
       description: t('projects.backendJava.description'),
       imageUrl: null,
@@ -201,7 +276,7 @@ export function buildProjects(t: (key: string) => string): Project[] {
       technologies: [TECHS.java, TECHS.springboot, TECHS.jpa, TECHS.mysql, TECHS.docker, TECHS.maven],
     },
     {
-      id: 4,
+      id: 7,
       name: t('projects.taskFlowApi.title'),
       description: t('projects.taskFlowApi.description'),
       imageUrl: null,
@@ -211,7 +286,7 @@ export function buildProjects(t: (key: string) => string): Project[] {
       technologies: [TECHS.java, TECHS.springboot, TECHS.postgresql, TECHS.jwt, TECHS.swagger, TECHS.testcontainers, TECHS.docker],
     },
     {
-      id: 5,
+      id: 8,
       name: t('projects.pronafe.title'),
       description: t('projects.pronafe.description'),
       imageUrl: null,
@@ -221,7 +296,7 @@ export function buildProjects(t: (key: string) => string): Project[] {
       technologies: [TECHS.php, TECHS.laravel, TECHS.inertia, TECHS.react, TECHS.ts, TECHS.vite, TECHS.tailwind, TECHS.mysql, TECHS.docker],
     },
     {
-      id: 6,
+      id: 9,
       name: t('projects.tarjetaCredito.title'),
       description: t('projects.tarjetaCredito.description'),
       imageUrl: null,
@@ -232,7 +307,7 @@ export function buildProjects(t: (key: string) => string): Project[] {
       technologies: [TECHS.angular, TECHS.ts, TECHS.bootstrap, TECHS.rxjs, TECHS.dotnet, TECHS.aspnet, TECHS.ef, TECHS.sqlserver, TECHS.swagger],
     },
     {
-      id: 7,
+      id: 10,
       name: t('projects.portfolioMobile.title'),
       description: t('projects.portfolioMobile.description'),
       imageUrl: null,
@@ -242,7 +317,7 @@ export function buildProjects(t: (key: string) => string): Project[] {
       technologies: [TECHS.reactnative, TECHS.expo, TECHS.js, TECHS.asyncstorage, TECHS.contextapi],
     },
     {
-      id: 8,
+      id: 11,
       name: t('projects.urlShortener.title'),
       description: t('projects.urlShortener.description'),
       imageUrl: null,
@@ -252,7 +327,7 @@ export function buildProjects(t: (key: string) => string): Project[] {
       technologies: [TECHS.csharp, TECHS.dotnet, TECHS.aspnet, TECHS.openapi],
     },
     {
-      id: 9,
+      id: 12,
       name: t('projects.windowsForm.title'),
       description: t('projects.windowsForm.description'),
       imageUrl: null,
@@ -262,7 +337,7 @@ export function buildProjects(t: (key: string) => string): Project[] {
       technologies: [TECHS.csharp, TECHS.dotnetfw, TECHS.winforms, TECHS.sqlserver, TECHS.adonet],
     },
     {
-      id: 10,
+      id: 13,
       name: t('projects.awInternetSales.title'),
       description: t('projects.awInternetSales.description'),
       imageUrl: null,
@@ -272,7 +347,7 @@ export function buildProjects(t: (key: string) => string): Project[] {
       technologies: [TECHS.ssas],
     },
     {
-      id: 11,
+      id: 14,
       name: t('projects.loginOauth.title'),
       description: t('projects.loginOauth.description'),
       imageUrl: null,
@@ -280,6 +355,16 @@ export function buildProjects(t: (key: string) => string): Project[] {
       repositoryUrl: repo('loginOauth'),
       liveUrl: null,
       technologies: [TECHS.node, TECHS.express],
+    },
+    {
+      id: 15,
+      name: t('projects.talentoTechBackendJava.title'),
+      description: t('projects.talentoTechBackendJava.description'),
+      imageUrl: null,
+      images: talentoTechBackendJavaUrls,
+      repositoryUrl: repo('talentoTechBackendJava'),
+      liveUrl: null,
+      technologies: [TECHS.java, TECHS.csv, TECHS.maven],
     },
   ]
 }

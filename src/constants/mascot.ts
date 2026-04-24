@@ -18,6 +18,14 @@ export const MASCOT_SELECTORS = [
 ]
 
 export const MASCOT_ACTIONS = ['hide', 'move'] as const
+export const MASCOT_MODES = ['interactive', 'assistant', 'reduced'] as const
+export const MASCOT_FREQUENCIES = ['normal', 'low'] as const
+
+export const MASCOT_STORAGE_KEYS = {
+  visible: 'mascot_visible',
+  mode: 'mascot_mode',
+  frequency: 'mascot_frequency',
+} as const
 
 export const MIN_ACTION_DELAY_MS = 4000
 export const MAX_ACTION_DELAY_MS = 10000

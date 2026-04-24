@@ -21,6 +21,7 @@ const EDUCATION_ITEMS: { labelKey: string; src: string; title: string }[] = [
   { labelKey: 'about.education.item15', src: 'certificates/Certificado - Taller de Deploy de Aplicaciones con Laravel.pdf', title: 'Certificado Taller de Deploy con Laravel' },
   { labelKey: 'about.education.item16', src: 'certificates/Certificado - Minicurso práctico de Flexbox y Grid.pdf', title: 'Certificado Minicurso Flexbox y Grid' },
   { labelKey: 'about.education.item17', src: 'certificates/Certificado - Curso de Bases y conceptos de la Ciencia de Datos.pdf', title: 'Certificado Bases y conceptos de la Ciencia de Datos' },
+  { labelKey: 'about.education.item18', src: 'certificates/Java para Principiantes - TodoCode.pdf', title: 'Certificado Java para Principiantes - TodoCode' },
 ]
 
 const AboutSection = () => {

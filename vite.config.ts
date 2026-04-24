@@ -1,9 +1,11 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
+
+const BASE_PATH = process.env.VITE_BASE_PATH ?? '/Portafolio_React/'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Portafolio_React/',
+  base: BASE_PATH,
   build: {
     target: 'esnext',
     sourcemap: false,
@@ -17,6 +19,25 @@ export default defineConfig({
           }
           return undefined
         },
+      },
+    },
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
+    css: true,
+    exclude: ['e2e/**', 'node_modules/**', 'dist/**'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html'],
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/main.tsx', 'src/i18n/translations.json'],
+      thresholds: {
+        lines: 45,
+        statements: 45,
+        functions: 35,
+        branches: 30,
       },
     },
   },

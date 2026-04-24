@@ -40,7 +40,8 @@
         "item14": "Introduction to DevOps: Bases and Concepts — Status: Completed.",
         "item15": "Workshop: Deploying Applications with Laravel — Status: Completed.",
         "item16": "Practical Minicourse: Flexbox and Grid — Status: Completed.",
-        "item17": "Bases and Concepts of Data Science — Status: Completed."
+        "item17": "Bases and Concepts of Data Science — Status: Completed.",
+        "item18": "Java for Beginners — Status: Completed."
       },
       "languages": {
         "title": "Languages",
@@ -138,6 +139,22 @@
       "bocato": {
         "title": "Bocato Pasteleria",
         "description": "Modern pastry website with Angular 20: i18n (ES/EN), dark mode, animations, responsive design, state with Signals, preferences in localStorage."
+      },
+      "camundaBackend": {
+        "title": "Camunda Backend",
+        "description": "Spring Boot backend with Camunda 7.24 REST parity under /api/v1/camunda, PostgreSQL support, OpenAPI docs and custom workflow endpoints."
+      },
+      "microservicesObservability": {
+        "title": "Spring Boot Microservices Observability",
+        "description": "Microservices architecture with Eureka, API Gateway, JWT, Prometheus metrics and Zipkin traces using Java 25, Spring Boot 4 and Spring Cloud."
+      },
+      "talentoTechBackendJava": {
+        "title": "Talento Tech Curso Backend Java",
+        "description": "Console-based Java management system for products and orders with CSV persistence, stock validation and package-based architecture."
+      },
+      "proyectoKafka": {
+        "title": "Proyecto Kafka",
+        "description": "Kafka demo with producer/consumer microservices in Spring Boot, Docker Compose infrastructure and topic/partition consumption flow."
       }
     },
     "contact": {
@@ -164,6 +181,11 @@
         "sendError": "Failed to send. Please try again or contact me by email."
       }
     },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The page you are looking for does not exist or was moved.",
+      "backHome": "Back to home"
+    },
     "meta": {
       "titleHome": "Tomas Tutor Onetto | Software Developer & Technical Leader",
       "descHome": "Portfolio of Tomas Tutor Onetto - Full Stack Developer and Technical Lead based in Buenos Aires, Argentina.",
@@ -176,7 +198,9 @@
       "titleProjects": "Projects | Tomas Tutor Onetto",
       "descProjects": "Recent projects: web apps, APIs, mobile and desktop applications.",
       "titleContact": "Contact | Tomas Tutor Onetto",
-      "descContact": "Get in touch with Tomas Tutor Onetto. Email, phone and contact form."
+      "descContact": "Get in touch with Tomas Tutor Onetto. Email, phone and contact form.",
+      "titleNotFound": "Page not found | Tomas Tutor Onetto",
+      "descNotFound": "Requested page is not available in this portfolio."
     },
     "footer": {
       "text": "© 2025 Tomas Tutor Onetto. All rights reserved."
@@ -191,7 +215,29 @@
       "hideComment": "Gone! 😄|Hidden!|Out of sight!|Nobody will find it now!|Poof!",
       "moveComment": "Moved it!|Relocated!|Somewhere else now!|Fresh spot!|Shifted!",
       "ariaLabel": "Portfolio mascot",
-      "hideLabel": "Hide mascot"
+      "hideLabel": "Hide mascot",
+      "settingsLabel": "Open mascot settings",
+      "settingsTitle": "Mascot preferences",
+      "modeLabel": "Mode",
+      "modeInteractive": "Interactive",
+      "modeAssistant": "Assistant",
+      "modeReduced": "Reduced",
+      "frequencyLabel": "Action frequency",
+      "frequencyNormal": "Normal",
+      "frequencyLow": "Low",
+      "reducedMotionHint": "Reduced motion is enabled in your system.",
+      "interactiveModeHint": "Interactive mode can move or hide elements for fun.",
+      "assistantModeHint": "Assistant mode shares contextual tips without moving the UI.",
+      "restoreLabel": "Restore mascot",
+      "reopen": "Show mascot",
+      "assistant": {
+        "home": "Tip: Use the CTA buttons to jump directly to Projects or Contact.",
+        "about": "Tip: This section helps recruiters evaluate profile fit quickly.",
+        "experience": "Tip: Focus on impact and measurable outcomes in each role.",
+        "skills": "Tip: Keep the top skills aligned with the role you're applying for.",
+        "projects": "Tip: Add measurable results and architecture decisions to each project.",
+        "contact": "Tip: Keep this form short for higher response rates."
+      }
     }
   },
   "es": {
@@ -235,7 +281,8 @@
         "item14": "Título: Curso de Introducción a DevOps: Bases y Conceptos. Estado: Finalizado.",
         "item15": "Título: Taller de Deploy de Aplicaciones con Laravel. Estado: Finalizado.",
         "item16": "Título: Minicurso práctico de Flexbox y Grid. Estado: Finalizado.",
-        "item17": "Título: Curso de Bases y conceptos de la Ciencia de Datos. Estado: Finalizado."
+        "item17": "Título: Curso de Bases y conceptos de la Ciencia de Datos. Estado: Finalizado.",
+        "item18": "Título: Java para Principiantes. Estado: Finalizado."
       },
       "languages": {
         "title": "Idiomas",
@@ -333,6 +380,22 @@
       "bocato": {
         "title": "Bocato Pasteleria",
         "description": "Sitio web moderno para pastelería con Angular 20: internacionalización (ES/EN), modo oscuro, animaciones, diseño responsive, estado con Signals, preferencias en localStorage."
+      },
+      "camundaBackend": {
+        "title": "Camunda Backend",
+        "description": "Backend en Spring Boot con paridad REST de Camunda 7.24 bajo /api/v1/camunda, soporte PostgreSQL, documentación OpenAPI y endpoints de workflow personalizados."
+      },
+      "microservicesObservability": {
+        "title": "Spring Boot Microservices Observability",
+        "description": "Arquitectura de microservicios con Eureka, API Gateway, JWT, métricas Prometheus y trazas Zipkin usando Java 25, Spring Boot 4 y Spring Cloud."
+      },
+      "talentoTechBackendJava": {
+        "title": "Talento Tech Curso Backend Java",
+        "description": "Sistema de gestión en Java por consola para productos y pedidos, con persistencia CSV, validación de stock y organización por paquetes."
+      },
+      "proyectoKafka": {
+        "title": "Proyecto Kafka",
+        "description": "Demo de Kafka con microservicios productor/consumidor en Spring Boot, infraestructura con Docker Compose y flujo de consumo por tópico/particiones."
       }
     },
     "contact": {
@@ -359,6 +422,11 @@
         "sendError": "No se pudo enviar. Probá de nuevo o contactame por correo."
       }
     },
+    "notFound": {
+      "title": "Página no encontrada",
+      "description": "La página que buscás no existe o fue movida.",
+      "backHome": "Volver al inicio"
+    },
     "meta": {
       "titleHome": "Tomas Tutor Onetto | Desarrollador de Software y Líder Técnico",
       "descHome": "Portafolio de Tomas Tutor Onetto - Desarrollador Full Stack y Líder Técnico en Buenos Aires, Argentina.",
@@ -371,7 +439,9 @@
       "titleProjects": "Proyectos | Tomas Tutor Onetto",
       "descProjects": "Proyectos recientes: aplicaciones web, APIs, móviles y de escritorio.",
       "titleContact": "Contacto | Tomas Tutor Onetto",
-      "descContact": "Contactá a Tomas Tutor Onetto. Correo, teléfono y formulario de contacto."
+      "descContact": "Contactá a Tomas Tutor Onetto. Correo, teléfono y formulario de contacto.",
+      "titleNotFound": "Página no encontrada | Tomas Tutor Onetto",
+      "descNotFound": "La página solicitada no está disponible en este portafolio."
     },
     "footer": {
       "text": "© 2025 Tomas Tutor Onetto. Todos los derechos reservados."
@@ -386,7 +456,29 @@
       "hideComment": "¡Listo, escondido! 😄|¡Escondido!|¡Fuera de vista!|¡Nadie lo encuentra ahora!|¡Puf!",
       "moveComment": "¡Lo moví de lugar!|¡Reubicado!|¡Por otro lado ahora!|¡Nuevo lugar!|¡Desplazado!",
       "ariaLabel": "Mascota del portafolio",
-      "hideLabel": "Ocultar mascota"
+      "hideLabel": "Ocultar mascota",
+      "settingsLabel": "Abrir configuración de la mascota",
+      "settingsTitle": "Preferencias de mascota",
+      "modeLabel": "Modo",
+      "modeInteractive": "Interactivo",
+      "modeAssistant": "Asistente",
+      "modeReduced": "Reducido",
+      "frequencyLabel": "Frecuencia de acciones",
+      "frequencyNormal": "Normal",
+      "frequencyLow": "Baja",
+      "reducedMotionHint": "Tenés activado movimiento reducido en el sistema.",
+      "interactiveModeHint": "El modo interactivo puede mover u ocultar elementos como efecto lúdico.",
+      "assistantModeHint": "El modo asistente muestra tips contextuales sin mover la UI.",
+      "restoreLabel": "Restaurar mascota",
+      "reopen": "Mostrar mascota",
+      "assistant": {
+        "home": "Tip: usá los botones principales para ir rápido a Proyectos o Contacto.",
+        "about": "Tip: esta sección ayuda a reclutadores a validar tu perfil en segundos.",
+        "experience": "Tip: destacá impacto y resultados medibles en cada rol.",
+        "skills": "Tip: priorizá las skills más relevantes para el puesto objetivo.",
+        "projects": "Tip: agregá resultados y decisiones técnicas clave por proyecto.",
+        "contact": "Tip: un formulario breve suele mejorar la tasa de respuesta."
+      }
     }
   }
 }
