@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useLanguage } from '../../context/LanguageContext'
 import { useMascotBehavior } from '../../hooks/useMascotBehavior'
@@ -6,6 +7,8 @@ import './Mascot.css'
 export default function Mascot() {
   const { t } = useLanguage()
   const location = useLocation()
+  const settingsPanelRef = useRef<HTMLDivElement | null>(null)
+  const settingsToggleRef = useRef<HTMLButtonElement | null>(null)
   const {
     position,
     comment,
@@ -25,6 +28,30 @@ export default function Mascot() {
     location.pathname,
     t
   )
+
+  useEffect(() => {
+    if (!settingsOpen) return
+
+    const handlePointerDown = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Node | null
+      if (!target) return
+
+      const clickedInsidePanel = settingsPanelRef.current?.contains(target)
+      const clickedToggle = settingsToggleRef.current?.contains(target)
+
+      if (!clickedInsidePanel && !clickedToggle) {
+        setSettingsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handlePointerDown)
+    document.addEventListener('touchstart', handlePointerDown)
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown)
+      document.removeEventListener('touchstart', handlePointerDown)
+    }
+  }, [settingsOpen, setSettingsOpen])
 
   if (!visible) {
     return (
@@ -49,6 +76,7 @@ export default function Mascot() {
     >
       <button
         type="button"
+        ref={settingsToggleRef}
         className="mascot-settings-toggle"
         onClick={() => setSettingsOpen((prev) => !prev)}
         aria-expanded={settingsOpen}
@@ -68,7 +96,12 @@ export default function Mascot() {
         ×
       </button>
       {settingsOpen && (
-        <div className="mascot-settings" id="mascot-settings" data-testid="mascot-settings">
+        <div
+          ref={settingsPanelRef}
+          className="mascot-settings"
+          id="mascot-settings"
+          data-testid="mascot-settings"
+        >
           <p className="mascot-settings-title">{t('mascot.settingsTitle')}</p>
           <label>
             {t('mascot.modeLabel')}
