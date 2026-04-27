@@ -21,7 +21,7 @@
     },
     "about": {
       "title": "About Me",
-      "summary": "Full Stack Developer and Technical Lead focused on turning business requirements into scalable digital solutions. My approach combines strong technical expertise in modern architectures with the ability to coordinate multidisciplinary teams to ensure quality and standards compliance in every delivery. I specialize in designing technical-functional architectures, integrating complex APIs and implementing solutions with conversational AI. I firmly believe that project success relies on effective communication with the client and continuous support throughout the entire software lifecycle.",
+      "summary": "Full Stack Developer and Technical Lead focused on building scalable products with real business impact. I work across the full cycle, from architecture and API design to frontend implementation and production deployment, combining technical depth with execution ownership. My stack spans Java, .NET, Python and Node.js ecosystems with React and Angular on the frontend, SQL and NoSQL databases, and modern DevOps practices with Docker and CI/CD. I lead with a pragmatic mindset: clean architecture, quality standards, measurable outcomes, and close collaboration with stakeholders to turn complex requirements into reliable solutions.",
       "education": {
         "title": "Education",
         "item1": "Analyst, Developer and Application Programmer — ISFDyT N°93 — Status: In Progress.",
@@ -71,10 +71,10 @@
         "description": "Teaching Assistant at a tertiary institute, supporting first-year subjects (C# console programming) and second-year OOP courses. I provided hands-on guidance to classes of around 30 students per group, reinforcing core logic, modeling, and problem-solving skills. I helped explain concepts, review exercises, and guide the use of tools such as Windows Forms, PSeInt, and flowcharts, while strengthening my technical communication and presentation skills."
       },
       "bono": {
-        "title": "IT Support",
+        "title": "Full Stack Developer",
         "company": "Estudio Contadores Bono",
         "period": "2020 - 2022",
-        "description": "Providing technical support and IT solutions."
+        "description": "IT Support at an accounting firm, building solutions to automate bookkeeping and reconciliation processes that were previously manual. I implemented a C# Windows Forms desktop system for daily/general ledger operations and later a Python + HTML/CSS/JavaScript web tool to compare income/expense files, generate balances, and export a third file with detected differences. This individual internal module reduced balancing time by approximately 80% and improved comparison quality and consistency, lowering operational effort for the team."
       }
     },
     "skills": {
@@ -262,7 +262,7 @@
     },
     "about": {
       "title": "Sobre Mí",
-      "summary": "Desarrollador Full Stack y Líder Técnico enfocado en transformar requerimientos de negocio en soluciones digitales escalables. Mi enfoque combina la solidez técnica en arquitecturas modernas con la capacidad de coordinar equipos multidisciplinarios para asegurar la calidad y el cumplimiento de estándares en cada entrega. Me especializo en el diseño de arquitecturas técnico-funcionales, integración de APIs complejas y la implementación de soluciones con IA conversacional. Creo firmemente que el éxito de un proyecto reside en la comunicación efectiva con el cliente y el acompañamiento constante en todo el ciclo de vida del software.",
+      "summary": "Desarrollador Full Stack y Líder Técnico enfocado en construir productos escalables con impacto real en el negocio. Trabajo de punta a punta en el ciclo de desarrollo, desde arquitectura y diseño de APIs hasta implementación frontend y despliegue en producción, combinando profundidad técnica con responsabilidad de ejecución. Mi stack abarca ecosistemas Java, .NET, Python y Node.js, con React y Angular en frontend, bases SQL y NoSQL, y prácticas DevOps modernas con Docker y CI/CD. Lidero con una visión pragmática: arquitectura limpia, estándares de calidad, resultados medibles y colaboración cercana con stakeholders para convertir requerimientos complejos en soluciones confiables.",
       "education": {
         "title": "Educación",
         "item1": "Título: Analista, Desarrollador y Programador de Aplicaciones. Institución: ISFDyT N°93. Estado: En Curso.",
@@ -312,10 +312,10 @@
         "description": "Ayudante de Cátedra en instituto terciario, acompañando materias de 1er año (programación en C# consola) y 2do año (Programación Orientada a Objetos). Brindé soporte práctico a cursos de aproximadamente 30 estudiantes por comisión, reforzando fundamentos de lógica, modelado y resolución de problemas. Participé en el acompañamiento de ejercicios, explicación de conceptos y guía en herramientas como Windows Forms, PSeInt y diagramas de flujo, fortaleciendo habilidades de comunicación técnica y exposición de ideas."
       },
       "bono": {
-        "title": "Soporte IT",
+        "title": "Desarrollador Full Stack",
         "company": "Estudio Contadores Bono",
         "period": "2020 - 2022",
-        "description": "Proporcionando soporte técnico y soluciones IT."
+        "description": "Soporte IT en estudio contable, desarrollando soluciones para automatizar procesos de registración y conciliación que se realizaban manualmente. Implementé un sistema de escritorio en C# Windows Forms para libro diario/libro mayor y, posteriormente, una herramienta web en Python + HTML/CSS/JavaScript para comparar archivos de ingresos y egresos, generar balances y exportar un tercer archivo con diferencias detectadas. El proyecto (individual, módulo interno) redujo en aproximadamente un 80% el tiempo de balance y mejoró la calidad y consistencia de la comparación, disminuyendo esfuerzo operativo del área."
       }
     },
     "skills": {
