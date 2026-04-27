@@ -10,7 +10,11 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  grid-template-areas:
+    "frontend databases"
+    "backend backend"
+    "tools tools";
   gap: 2rem;
   align-items: start;
 }
@@ -129,8 +133,19 @@
   color: #1f2937 !important;
 }
 
+.skills-category-frontend { grid-area: frontend; }
+.skills-category-databases { grid-area: databases; }
+
+.skills-category-backend {
+  grid-area: backend;
+}
+
+.skills-category-backend .skills-list {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
 .skills-category-tools {
-  grid-column: 1 / -1;
+  grid-area: tools;
 }
 
 .skills-category-tools .skills-list {
@@ -140,6 +155,10 @@
 @media (max-width: 1024px) {
   .skills-grid {
     grid-template-columns: repeat(2, minmax(260px, 1fr));
+    grid-template-areas:
+      "frontend databases"
+      "backend backend"
+      "tools tools";
   }
 }
 
@@ -150,11 +169,12 @@
 
   .skills-grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "frontend"
+      "databases"
+      "backend"
+      "tools";
     gap: 1.5rem;
-  }
-
-  .skills-category-tools {
-    grid-column: auto;
   }
 
   .skills-category {

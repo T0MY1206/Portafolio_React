@@ -21,7 +21,7 @@
     },
     "about": {
       "title": "About Me",
-      "summary": "Full Stack Developer and Technical Lead with over 4 years of experience turning business requirements into scalable digital solutions. My approach combines strong technical expertise in modern architectures with the ability to coordinate multidisciplinary teams to ensure quality and standards compliance in every delivery. I specialize in designing technical-functional architectures, integrating complex APIs and implementing solutions with conversational AI. I firmly believe that project success relies on effective communication with the client and continuous support throughout the entire software lifecycle.",
+      "summary": "Full Stack Developer and Technical Lead focused on turning business requirements into scalable digital solutions. My approach combines strong technical expertise in modern architectures with the ability to coordinate multidisciplinary teams to ensure quality and standards compliance in every delivery. I specialize in designing technical-functional architectures, integrating complex APIs and implementing solutions with conversational AI. I firmly believe that project success relies on effective communication with the client and continuous support throughout the entire software lifecycle.",
       "education": {
         "title": "Education",
         "item1": "Analyst, Developer and Application Programmer — ISFDyT N°93 — Status: In Progress.",
@@ -56,19 +56,19 @@
         "title": "Full Stack Developer",
         "company": "ThankIt",
         "period": "2020 - Present",
-        "description": "Full stack development of web applications and business systems."
+        "description": "Full Stack developer in a healthcare SMB project for pre-surgical workflow management, implementing core modules end-to-end across frontend, backend, and database. I improved maintainability through reusable code patterns and clean coding practices, and resolved production issues impacting operational continuity. My execution contributed to an estimated 60% operational time improvement based on reports and team validation."
       },
       "thankit": {
         "title": "Technical Leader",
         "company": "ThankIt",
-        "period": "2023 - Present",
-        "description": "Leading technical initiatives and development teams."
+        "period": "2025 - Present",
+        "description": "Concurrent with my Full Stack role, I led the technical direction of a pre-surgical workflow system in a healthcare SMB. I defined architecture and quality guidelines, supported developers in critical decisions, and coordinated execution with functional analysts and QA while keeping a hands-on contribution in implementation and high-impact incident resolution."
       },
       "isfdyt": {
         "title": "Teaching Assistant",
         "company": "ISFDyT N°93",
         "period": "2022 - 2024",
-        "description": "Assisting in educational programs and student support."
+        "description": "Teaching Assistant at a tertiary institute, supporting first-year subjects (C# console programming) and second-year OOP courses. I provided hands-on guidance to classes of around 30 students per group, reinforcing core logic, modeling, and problem-solving skills. I helped explain concepts, review exercises, and guide the use of tools such as Windows Forms, PSeInt, and flowcharts, while strengthening my technical communication and presentation skills."
       },
       "bono": {
         "title": "IT Support",
@@ -190,7 +190,7 @@
       "titleHome": "Tomas Tutor Onetto | Software Developer & Technical Leader",
       "descHome": "Portfolio of Tomas Tutor Onetto - Full Stack Developer and Technical Lead based in Buenos Aires, Argentina.",
       "titleAbout": "About Me | Tomas Tutor Onetto",
-      "descAbout": "Full Stack Developer and Technical Lead with over 4 years of experience. Education, languages and professional profile.",
+      "descAbout": "Full Stack Developer and Technical Lead. Education, languages and professional profile.",
       "titleExperience": "Experience | Tomas Tutor Onetto",
       "descExperience": "Professional experience: Full Stack Developer, Technical Leader, Teaching Assistant and IT Support.",
       "titleSkills": "Skills | Tomas Tutor Onetto",
@@ -262,7 +262,7 @@
     },
     "about": {
       "title": "Sobre Mí",
-      "summary": "Desarrollador Full Stack y Líder Técnico con más de 4 años de experiencia transformando requerimientos de negocio en soluciones digitales escalables. Mi enfoque combina la solidez técnica en arquitecturas modernas con la capacidad de coordinar equipos multidisciplinarios para asegurar la calidad y el cumplimiento de estándares en cada entrega. Me especializo en el diseño de arquitecturas técnico-funcionales, integración de APIs complejas y la implementación de soluciones con IA conversacional. Creo firmemente que el éxito de un proyecto reside en la comunicación efectiva con el cliente y el acompañamiento constante en todo el ciclo de vida del software.",
+      "summary": "Desarrollador Full Stack y Líder Técnico enfocado en transformar requerimientos de negocio en soluciones digitales escalables. Mi enfoque combina la solidez técnica en arquitecturas modernas con la capacidad de coordinar equipos multidisciplinarios para asegurar la calidad y el cumplimiento de estándares en cada entrega. Me especializo en el diseño de arquitecturas técnico-funcionales, integración de APIs complejas y la implementación de soluciones con IA conversacional. Creo firmemente que el éxito de un proyecto reside en la comunicación efectiva con el cliente y el acompañamiento constante en todo el ciclo de vida del software.",
       "education": {
         "title": "Educación",
         "item1": "Título: Analista, Desarrollador y Programador de Aplicaciones. Institución: ISFDyT N°93. Estado: En Curso.",
@@ -297,19 +297,19 @@
         "title": "Desarrollador Full Stack",
         "company": "ThankIt",
         "period": "2020 - Presente",
-        "description": "Desarrollo full stack de aplicaciones web y sistemas empresariales."
+        "description": "Desarrollador Full Stack en un proyecto de salud para gestión prequirúrgica, implementando módulos clave de punta a punta entre frontend, backend y base de datos. Mejoré la mantenibilidad mediante patrones de reutilización de código y buenas prácticas, y resolví incidencias en producción que impactaban la continuidad operativa. Mi ejecución contribuyó a una mejora estimada del 60% en tiempo operativo según reportes y validación del equipo."
       },
       "thankit": {
         "title": "Líder Técnico",
         "company": "ThankIt",
-        "period": "2023 - Presente",
-        "description": "Liderando iniciativas técnicas y equipos de desarrollo."
+        "period": "2025 - Presente",
+        "description": "En paralelo al rol Full Stack, lideré la dirección técnica de un sistema prequirúrgico en una pyme de salud. Definí lineamientos de arquitectura y calidad, acompañé al equipo en decisiones críticas y coordiné la ejecución con analistas funcionales y QA, manteniendo participación hands-on en implementación y resolución de incidencias de alto impacto."
       },
       "isfdyt": {
         "title": "Ayudante de Cátedra",
         "company": "ISFDyT N°93",
         "period": "2022 - 2024",
-        "description": "Asistiendo en programas educativos y apoyo estudiantil."
+        "description": "Ayudante de Cátedra en instituto terciario, acompañando materias de 1er año (programación en C# consola) y 2do año (Programación Orientada a Objetos). Brindé soporte práctico a cursos de aproximadamente 30 estudiantes por comisión, reforzando fundamentos de lógica, modelado y resolución de problemas. Participé en el acompañamiento de ejercicios, explicación de conceptos y guía en herramientas como Windows Forms, PSeInt y diagramas de flujo, fortaleciendo habilidades de comunicación técnica y exposición de ideas."
       },
       "bono": {
         "title": "Soporte IT",
@@ -431,7 +431,7 @@
       "titleHome": "Tomas Tutor Onetto | Desarrollador de Software y Líder Técnico",
       "descHome": "Portafolio de Tomas Tutor Onetto - Desarrollador Full Stack y Líder Técnico en Buenos Aires, Argentina.",
       "titleAbout": "Sobre Mí | Tomas Tutor Onetto",
-      "descAbout": "Desarrollador Full Stack y Líder Técnico con más de 4 años de experiencia. Educación, idiomas y perfil profesional.",
+      "descAbout": "Desarrollador Full Stack y Líder Técnico. Educación, idiomas y perfil profesional.",
       "titleExperience": "Experiencia | Tomas Tutor Onetto",
       "descExperience": "Experiencia profesional: Desarrollador Full Stack, Líder Técnico, Ayudante de Cátedra y Soporte IT.",
       "titleSkills": "Habilidades | Tomas Tutor Onetto",
