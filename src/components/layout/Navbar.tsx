@@ -54,7 +54,7 @@ const Navbar = () => {
               className="lang-toggle"
               aria-label={t('nav.toggleLang')}
             >
-              {language === 'en' ? 'ES' : 'EN'}
+              {language === 'es' ? 'ES' : 'EN'}
             </button>
             <button
               onClick={toggleTheme}
